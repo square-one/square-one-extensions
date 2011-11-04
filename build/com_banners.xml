@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="com_banners" default="build" basedir="../">
+	
+    <target name="build">
+        
+        <xmlproperty file="administrator/components/com_banners/banners.xml" />
+        <property name="version" value="${extension.version}" />
+        <property name="filename" value="com_banners-${version}.zip" />
+        
+        <available file="${filename}" property="zip" value="yes" />
+        <if>
+            <equals arg1="${zip}" arg2="yes" />
+            <then>
+                <delete file="${filename}" />
+            </then>
+        </if>
+		
+		<mkdir dir=".tmp" />
+        
+        <copy dir="administrator/components/com_banners" todir=".tmp/admin" />
+		<copy file="administrator/language/en-GB/en-GB.com_banners.ini" tofile=".tmp/admin/language/en-GB/en-GB.com_banners.ini" />
+		<copy file="administrator/language/en-GB/en-GB.com_banners.sys.ini" tofile=".tmp/admin/language/en-GB/en-GB.com_banners.sys.ini" />
+		<copy dir="components/com_banners" todir=".tmp/site" />
+		
+		<move file=".tmp/admin/banners.xml" tofile=".tmp/banners.xml" />
+        
+        <zip destfile="build/${filename}" basedir=".tmp" />
+        
+        <delete dir=".tmp" includeemptydirs="true" />
+	</target>
+
+</project>
