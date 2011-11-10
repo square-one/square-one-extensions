@@ -1,4 +1,4 @@
-CREATE TABLE `#__contact_details` (
+CREATE TABLE IF NOT EXISTS `#__contact_details` (
   `id` integer NOT NULL auto_increment,
   `name` varchar(255) NOT NULL default '',
   `alias` varchar(255) NOT NULL default '',
@@ -51,4 +51,3 @@ CREATE TABLE `#__contact_details` (
   KEY `idx_language` (`language`),
   KEY `idx_xreference` (`xreference`)
 )  DEFAULT CHARSET=utf8;
-

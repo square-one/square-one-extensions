@@ -1,4 +1,4 @@
-CREATE TABLE `#__banners` (
+CREATE TABLE IF NOT EXISTS `#__banners` (
   `id` INTEGER NOT NULL auto_increment,
   `cid` INTEGER NOT NULL DEFAULT '0',
   `type` INTEGER NOT NULL DEFAULT '0',
@@ -36,7 +36,7 @@ CREATE TABLE `#__banners` (
   INDEX `idx_language` (`language`)
 ) DEFAULT CHARSET=utf8;
 
-CREATE TABLE `#__banner_clients` (
+CREATE TABLE IF NOT EXISTS `#__banner_clients` (
   `id` INTEGER NOT NULL auto_increment,
   `name` VARCHAR(255) NOT NULL DEFAULT '',
   `contact` VARCHAR(255) NOT NULL DEFAULT '',
@@ -56,7 +56,7 @@ CREATE TABLE `#__banner_clients` (
   INDEX `idx_metakey_prefix` (`metakey_prefix`)
 )  DEFAULT CHARSET=utf8;
 
-CREATE TABLE  `#__banner_tracks` (
+CREATE TABLE IF NOT EXISTS `#__banner_tracks` (
   `track_date` DATETIME NOT NULL,
   `track_type` INTEGER UNSIGNED NOT NULL,
   `banner_id` INTEGER UNSIGNED NOT NULL,

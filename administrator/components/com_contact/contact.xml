@@ -38,7 +38,7 @@
 		<language tag="en-GB">language/en-GB/en-GB.com_contact.ini</language>
 	</languages>
 	
-	<media destination="contacts" folder="media">
+	<media destination="contacts" folder="media/contacts">
 		<folder>images</folder>
 		<filename>index.html</filename>
 	</media>
