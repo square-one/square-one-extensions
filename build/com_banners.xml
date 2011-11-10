@@ -17,10 +17,14 @@
 		
 		<mkdir dir=".tmp" />
         
-        <copy dir="administrator/components/com_banners" todir=".tmp/admin" />
+        <copy todir=".tmp/admin">
+			<fileset dir="administrator/components/com_banners" />
+		</copy>
 		<copy file="administrator/language/en-GB/en-GB.com_banners.ini" tofile=".tmp/admin/language/en-GB/en-GB.com_banners.ini" />
 		<copy file="administrator/language/en-GB/en-GB.com_banners.sys.ini" tofile=".tmp/admin/language/en-GB/en-GB.com_banners.sys.ini" />
-		<copy dir="components/com_banners" todir=".tmp/site" />
+		<copy todir=".tmp/site">
+			<fileset dir="components/com_banners" />
+		</copy>
 		
 		<move file=".tmp/admin/banners.xml" tofile=".tmp/banners.xml" />
         

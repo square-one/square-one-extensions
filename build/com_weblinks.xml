@@ -17,12 +17,15 @@
 		
 		<mkdir dir=".tmp" />
         
-        <copy dir="administrator/components/com_weblinks" todir=".tmp/admin" />
+        <copy todir=".tmp/admin">
+			<fileset dir="administrator/components/com_weblinks" />
+		</copy>
 		<copy file="administrator/language/en-GB/en-GB.com_weblinks.ini" tofile=".tmp/admin/language/en-GB/en-GB.com_weblinks.ini" />
 		<copy file="administrator/language/en-GB/en-GB.com_weblinks.sys.ini" tofile=".tmp/admin/language/en-GB/en-GB.com_weblinks.sys.ini" />
-		<copy dir="components/com_weblinks" todir=".tmp/site" />
+		<copy todir=".tmp/site">
+			<fileset dir="components/com_weblinks" />
+		</copy>
 		<copy file="language/en-GB/en-GB.com_weblinks.ini" tofile=".tmp/site/language/en-GB/en-GB.com_weblinks.ini" />
-		<copy file="language/en-GB/en-GB.com_weblinks.sys.ini" tofile=".tmp/site/language/en-GB/en-GB.com_weblinks.sys.ini" />
 		
 		<move file=".tmp/admin/weblinks.xml" tofile=".tmp/weblinks.xml" />
         

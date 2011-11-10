@@ -17,12 +17,15 @@
 		
 		<mkdir dir=".tmp" />
         
-        <copy dir="administrator/components/com_newsfeeds" todir=".tmp/admin" />
+        <copy todir=".tmp/admin">
+			<fileset dir="administrator/components/com_newsfeeds" />
+		</copy>
 		<copy file="administrator/language/en-GB/en-GB.com_newsfeeds.ini" tofile=".tmp/admin/language/en-GB/en-GB.com_newsfeeds.ini" />
 		<copy file="administrator/language/en-GB/en-GB.com_newsfeeds.sys.ini" tofile=".tmp/admin/language/en-GB/en-GB.com_newsfeeds.sys.ini" />
-		<copy dir="components/com_newsfeeds" todir=".tmp/site" />
+		<copy todir=".tmp/site">
+			<fileset dir="components/com_newsfeeds" />
+		</copy>
 		<copy file="language/en-GB/en-GB.com_newsfeeds.ini" tofile=".tmp/site/language/en-GB/en-GB.com_newsfeeds.ini" />
-		<copy file="language/en-GB/en-GB.com_newsfeeds.sys.ini" tofile=".tmp/site/language/en-GB/en-GB.com_newsfeeds.sys.ini" />
 		
 		<move file=".tmp/admin/newsfeeds.xml" tofile=".tmp/newsfeeds.xml" />
         

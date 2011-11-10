@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="com_contact" default="build" basedir="../">
+	
+    <target name="build">
+        
+        <xmlproperty file="administrator/components/com_contact/contact.xml" />
+        <property name="version" value="${extension.version}" />
+        <property name="filename" value="com_contact-${version}.zip" />
+        
+        <available file="${filename}" property="zip" value="yes" />
+        <if>
+            <equals arg1="${zip}" arg2="yes" />
+            <then>
+                <delete file="${filename}" />
+            </then>
+        </if>
+		
+		<mkdir dir=".tmp" />
+        
+        <copy todir=".tmp/admin">
+			<fileset dir="administrator/components/com_contact" />
+		</copy>
+		<copy file="administrator/language/en-GB/en-GB.com_contact.ini" tofile=".tmp/admin/language/en-GB/en-GB.com_contact.ini" />
+		<copy file="administrator/language/en-GB/en-GB.com_contact.sys.ini" tofile=".tmp/admin/language/en-GB/en-GB.com_contact.sys.ini" />
+		<copy todir=".tmp/site">
+			<fileset dir="components/com_contact" />
+		</copy>
+		<copy file="language/en-GB/en-GB.com_contact.ini" tofile=".tmp/site/language/en-GB/en-GB.com_contact.ini" />
+		<copy todir=".tmp/media/contacts">
+			<fileset dir="media/contacts" />
+		</copy>
+		
+		<move file=".tmp/admin/contact.xml" tofile=".tmp/contact.xml" />
+        
+        <zip destfile="build/${filename}" basedir=".tmp" />
+        
+        <delete dir=".tmp" includeemptydirs="true" />
+	</target>
+
+</project>
