@@ -4,10 +4,38 @@ Square One is a light distribution of Joomla! It is being designed to meet the n
 
 Square One CMS has removed many of the core extensions, and will be making them available as a separate download. These are the currently supported extensions.
 
+##### Components
  * Banners Component
  * Contacts Component
  * Newsfeeds Component
+ * Redirect Component
  * Weblinks Component
+ * Wrapper Component
+
+##### Modules
+ * Banners Module
+ * Footer Module
+ * Random Image Module
+ * Stats Module
+ * Syndicate Module
+ * Latest Users Module
+ * Weblinks Module
+ * Whos Online Module
+ * Wrapper Module
+ 
+##### Plugins
+ * Gmail Authentication Plugin
+ * LDAP Authentication Plugin
+ * Email Cloak Content Plugin
+ * Geshi Content Plugin
+ * Page Navigation Content Plugin
+ * Vote Content Plugin
+ * Codemirror Editor Plugin
+ * Contacts Search Plugin
+ * Newsfeeds Search Plugin
+ * Weblinks Search Plugin
+ * Redirect System Plugin
+ * Contact Creator User Plugin
 
 ## Who is running this?
 
