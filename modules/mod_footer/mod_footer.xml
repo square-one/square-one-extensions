@@ -18,9 +18,9 @@
 		<folder>tmpl</folder>
 		<filename>index.html</filename>		<filename>mod_footer.xml</filename>
 	</files>
-	<languages>
-		<language tag="en-GB">en-GB.mod_footer.ini</language>
-		<language tag="en-GB">en-GB.mod_footer.sys.ini</language>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_footer.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_footer.sys.ini</language>
 	</languages>
 	<help key="JHELP_EXTENSIONS_MODULE_MANAGER_FOOTER" />
 	<config>
