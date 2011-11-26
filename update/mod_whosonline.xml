@@ -1,0 +1,21 @@
+<updates>
+	<update>
+		<name>Who's Online Module</name>
+		<description>Who's Online Module</description>
+		<element>mod_whosonline</element>
+		<type>module</type>
+		<version>1.7.0</version>
+		<client_id>1</client_id>
+		<infourl title="Square One">http://www.squareonecms.org/</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">http://update.squareonecms.org/extensions/files/1.7/mod_whosonline-1.7.0.zip</downloadurl>
+		</downloads>
+        <tags>
+            <tag>stable</tag>
+        </tags>
+        <category></category>
+		<maintainer>Jeremy Wilken</maintainer>
+		<maintainerurl>http://www.gnomeontherun.com</maintainerurl>
+		<targetplatform name="squareone" version="1.7" />
+	</update>
+</updates>
