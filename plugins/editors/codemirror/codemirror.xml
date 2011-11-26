@@ -11,11 +11,17 @@
 	<description>PLG_CODEMIRROR_XML_DESCRIPTION</description>
 	<files>
 		<filename plugin="codemirror">codemirror.php</filename>
-		<filename>index.html</filename>	</files>
-	<languages>
-		<language tag="en-GB">en-GB.plg_editors_codemirror.ini</language>
-		<language tag="en-GB">en-GB.plg_editors_codemirror.sys.ini</language>
+		<filename>index.html</filename>	
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_editors_codemirror.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_editors_codemirror.sys.ini</language>
 	</languages>
+	<media destination="editors/codemirror" folder="media/editors/codemirror">
+		<folder>css</folder>
+		<folder>js</folder>
+		<filename>index.html</filename>
+	</media>
 	<config>
 		<fields name="params">
 
