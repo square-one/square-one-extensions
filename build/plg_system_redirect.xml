@@ -3,8 +3,9 @@
 	
     <target name="build">
         
-		<property name="package" value="com_${phing.project.name}" override="true" />
-        <xmlproperty file="administrator/components/${package}/${phing.project.name}.xml" />
+		<property name="type" value="system" override="true" />
+		<property name="package" value="plg_${type}_${phing.project.name}" override="true" />
+        <xmlproperty file="plugins/${type}/${phing.project.name}/${phing.project.name}.xml" />
         <property name="version" value="${extension.version}" />
         <property name="filename" value="${package}-${version}.zip" />
         
@@ -18,14 +19,12 @@
 		
 		<mkdir dir=".tmp" />
         
-		<copy file="administrator/language/en-GB/en-GB.${package}.ini" tofile=".tmp/admin/language/en-GB/en-GB.${package}.ini" />
-		<copy file="administrator/language/en-GB/en-GB.${package}.sys.ini" tofile=".tmp/admin/language/en-GB/en-GB.${package}.sys.ini" />
-		<copy todir=".tmp/admin">
-			<fileset dir="administrator/components/${package}" />
+        <copy todir=".tmp">
+			<fileset dir="plugins/${type}/${phing.project.name}" />
 		</copy>
+		<copy file="administrator/language/en-GB/en-GB.${package}.ini" tofile=".tmp/language/en-GB/en-GB.${package}.ini" />
+		<copy file="administrator/language/en-GB/en-GB.${package}.sys.ini" tofile=".tmp/language/en-GB/en-GB.${package}.sys.ini" />
 		
-		<move file=".tmp/admin/${phing.project.name}.xml" tofile=".tmp/${phing.project.name}.xml" />
-        
         <zip destfile="build/${filename}" basedir=".tmp" />
         
         <delete dir=".tmp" includeemptydirs="true" />
