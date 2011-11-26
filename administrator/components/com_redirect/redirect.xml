@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-	<!-- $Id: redirect.xml 21505 2011-06-10 07:21:09Z infograf768 $ -->
 <extension type="component" version="1.7" method="upgrade">
 	<name>com_redirect</name>
 	<author>Joomla! Project</author>
@@ -25,10 +24,8 @@
 			<folder>views</folder>
 		</files>
 		<languages folder="admin">
-			<language tag="en-GB">language/en-GB.com_redirect.ini
-			</language>
-			<language tag="en-GB">language/en-GB.com_redirect.sys.ini
-			</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_redirect.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_redirect.sys.ini</language>
 		</languages>
 	</administration>
 </extension>
