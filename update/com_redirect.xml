@@ -1,15 +1,14 @@
 <updates>
 	<update>
-		<name>Codemirror Editor Plugin</name>
-		<description>Codemirror Editor Plugin</description>
-		<element>plg_editors_codemirror</element>
-		<type>plugin</type>
-		<folder>editors</folder>
-		<version>1.0</version>
+		<name>Redirect</name>
+		<description>Redirect Component</description>
+		<element>com_redirect</element>
+		<type>component</type>
+		<version>1.7.0</version>
 		<client_id>1</client_id>
 		<infourl title="Square One">http://www.squareonecms.org/</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">http://update.squareonecms.org/extensions/files/1.7/plg_editors_codemirror-1.0.zip</downloadurl>
+			<downloadurl type="full" format="zip">http://update.squareonecms.org/extensions/files/1.7/com_redirect-1.7.0.zip</downloadurl>
 		</downloads>
         <tags>
             <tag>stable</tag>
