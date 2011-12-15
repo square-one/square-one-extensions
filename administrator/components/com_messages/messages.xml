@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- $Id: messages.xml 21505 2011-06-10 07:21:09Z infograf768 $ -->
 <extension type="component" version="1.7" method="upgrade">
 	<name>com_messages</name>
 	<author>Joomla! Project</author>
@@ -10,6 +9,18 @@
 	<authorUrl>www.joomla.org</authorUrl>
 	<version>1.7.0</version>
 	<description>COM_MESSAGES_XML_DESCRIPTION</description>
+    
+    <install> <!-- Runs on install -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+    
 	<administration>
 		<files folder="admin">
 			<filename>config.xml</filename>
@@ -19,12 +30,12 @@
 			<folder>controllers</folder>
 			<folder>helpers</folder>
 			<folder>models</folder>
+			<folder>sql</folder>
 			<folder>tables</folder>
 			<folder>views</folder>
 		</files>
 		<languages folder="admin">
-			<language tag="en-GB">language/en-GB.com_messages.ini
-			</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_messages.ini</language>
 		</languages>
 	</administration>
 </extension>
