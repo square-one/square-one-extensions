@@ -22,6 +22,7 @@
 			<fileset dir="administrator/components/${package}" />
 		</copy>
 		<copy file="administrator/language/en-GB/en-GB.${package}.ini" tofile=".tmp/admin/language/en-GB/en-GB.${package}.ini" />
+        <copy file="administrator/language/en-GB/en-GB.${package}.sys.ini" tofile=".tmp/admin/language/en-GB/en-GB.${package}.sys.ini" />
 		
 		<move file=".tmp/admin/${phing.project.name}.xml" tofile=".tmp/${phing.project.name}.xml" />
         

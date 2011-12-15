@@ -36,6 +36,7 @@
 		</files>
 		<languages folder="admin">
 			<language tag="en-GB">language/en-GB/en-GB.com_messages.ini</language>
+            <language tag="en-GB">language/en-GB/en-GB.com_messages.sys.ini</language>
 		</languages>
 	</administration>
 </extension>
