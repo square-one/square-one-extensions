@@ -1,10 +1,6 @@
 <?php
 /**
-<<<<<<< HEAD
- * @version		$Id: contacts.php 21766 2011-07-08 12:20:23Z eddieajau $
-=======
  * @version		$Id$
->>>>>>> remotes/joomla/master
  * @package		Joomla.Administrator
  * @subpackage	com_contact
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -149,11 +145,7 @@ class ContactModelContacts extends JModelList
 
 		// Join over the language
 		$query->select('l.title AS language_title');
-<<<<<<< HEAD
-		$query->join('LEFT', '`#__languages` AS l ON l.lang_code = a.language');
-=======
 		$query->join('LEFT', $db->nameQuote('#__languages').' AS l ON l.lang_code = a.language');
->>>>>>> remotes/joomla/master
 
 		// Join over the users for the checked out user.
 		$query->select('uc.name AS editor');
@@ -184,11 +176,7 @@ class ContactModelContacts extends JModelList
 		if (is_numeric($published)) {
 			$query->where('a.published = ' . (int) $published);
 		}
-<<<<<<< HEAD
-		else if ($published === '') {
-=======
 		elseif ($published === '') {
->>>>>>> remotes/joomla/master
 			$query->where('(a.published = 0 OR a.published = 1)');
 		}
 
@@ -197,11 +185,7 @@ class ContactModelContacts extends JModelList
 		if (is_numeric($categoryId)) {
 			$query->where('a.catid = '.(int) $categoryId);
 		}
-<<<<<<< HEAD
-		else if (is_array($categoryId)) {
-=======
 		elseif (is_array($categoryId)) {
->>>>>>> remotes/joomla/master
 			JArrayHelper::toInteger($categoryId);
 			$categoryId = implode(',', $categoryId);
 			$query->where('a.catid IN ('.$categoryId.')');
@@ -213,16 +197,12 @@ class ContactModelContacts extends JModelList
 			if (stripos($search, 'id:') === 0) {
 				$query->where('a.id = '.(int) substr($search, 3));
 			}
-<<<<<<< HEAD
-			else if (stripos($search, 'author:') === 0) {
-=======
 			elseif (stripos($search, 'author:') === 0) {
->>>>>>> remotes/joomla/master
-				$search = $db->Quote('%'.$db->getEscaped(substr($search, 7), true).'%');
+				$search = $db->Quote('%'.$db->escape(substr($search, 7), true).'%');
 				$query->where('(ua.name LIKE '.$search.' OR ua.username LIKE '.$search.')');
 			}
 			else {
-				$search = $db->Quote('%'.$db->getEscaped($search, true).'%');
+				$search = $db->Quote('%'.$db->escape($search, true).'%');
 				$query->where('(a.name LIKE '.$search.' OR a.alias LIKE '.$search.')');
 			}
 		}
@@ -236,13 +216,9 @@ class ContactModelContacts extends JModelList
 		$orderCol	= $this->state->get('list.ordering');
 		$orderDirn	= $this->state->get('list.direction');
 		if ($orderCol == 'a.ordering' || $orderCol == 'category_title') {
-<<<<<<< HEAD
-			$orderCol = 'category_title '.$orderDirn.', a.ordering';
-=======
 			$orderCol = 'c.title '.$orderDirn.', a.ordering';
->>>>>>> remotes/joomla/master
 		}
-		$query->order($db->getEscaped($orderCol.' '.$orderDirn));
+		$query->order($db->escape($orderCol.' '.$orderDirn));
 
 		//echo nl2br(str_replace('#__','jos_',$query));
 		return $query;

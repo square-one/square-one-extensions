@@ -9,12 +9,6 @@
 
 defined('JPATH_BASE') or die;
 
-<<<<<<< HEAD
-jimport('joomla.html.html');
-=======
->>>>>>> remotes/joomla/master
-jimport('joomla.form.formfield');
-
 /**
  * Supports an HTML select list of contacts
  *
