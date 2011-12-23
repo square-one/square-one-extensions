@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: message.php 21320 2011-05-11 01:01:37Z dextercowley $
+ * @version		$Id$
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
@@ -183,7 +183,7 @@ class MessagesModelMessage extends JModelAdmin
 			$table->user_id_from = JFactory::getUser()->get('id');
 		}
 		if (intval($table->date_time) == 0) {
-			$table->date_time = JFactory::getDate()->toMySQL();
+			$table->date_time = JFactory::getDate()->toSql();
 		}
 
 		// Check the data.

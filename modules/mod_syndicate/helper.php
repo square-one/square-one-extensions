@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: helper.php 21913 2011-07-25 05:21:57Z infograf768 $
+ * @version		$Id$
  * @package		Joomla.Site
  * @subpackage	mod_syndicate
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.

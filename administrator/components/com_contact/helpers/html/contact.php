@@ -1,6 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
  * @version		$Id: contact.php 21477 2011-06-08 00:25:11Z dextercowley $
+=======
+ * @version		$Id$
+>>>>>>> remotes/joomla/master
  * @package		Joomla.Administrator
  * @subpackage	com_contact
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.

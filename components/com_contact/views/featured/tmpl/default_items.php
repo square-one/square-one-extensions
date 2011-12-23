@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: default_items.php 21700 2011-06-28 04:32:41Z dextercowley $
+ * @version		$Id$
  * @package		Joomla.Site
  * @subpackage	com_contact
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -159,17 +159,5 @@ $params = &$this->item->params;
 		</tbody>
 	</table>
 
-	<?php if ($this->params->get('show_pagination')) : ?>
-	<div class="pagination">
-		<?php if ($this->params->def('show_pagination_results', 1)) : ?>
-		<p class="counter">
-			<?php echo $this->pagination->getPagesCounter(); ?>
-		</p>
-		<?php endif; ?>
-		<?php echo $this->pagination->getPagesLinks(); ?>
-	</div>
-	<?php endif; ?>
 </form>
 <?php endif; ?>
-
-<div class="item-separator"></div>

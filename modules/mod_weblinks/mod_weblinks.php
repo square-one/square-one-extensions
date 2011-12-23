@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: mod_weblinks.php 21097 2011-04-07 15:38:03Z dextercowley $
+ * @version		$Id$
  * @package		Joomla.Site
  * @subpackage	mod_weblinks
  * @copyright	Copyright (C) 2005 - 2009 Open Source Matters, Inc. All rights reserved.

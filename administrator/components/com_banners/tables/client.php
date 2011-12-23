@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: client.php 21097 2011-04-07 15:38:03Z dextercowley $
+ * @version		$Id$
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
@@ -19,6 +19,7 @@ class BannersTableClient extends JTable
 {
 	function __construct(&$_db)
 	{
+		$this->checked_out_time = $_db->getNullDate();
 		parent::__construct('#__banner_clients', 'id', $_db);
 	}
 
@@ -70,8 +71,8 @@ class BannersTableClient extends JTable
 
 		// Update the publishing state for rows with the given primary keys.
 		$this->_db->setQuery(
-			'UPDATE `'.$this->_tbl.'`' .
-			' SET `state` = '.(int) $state .
+			'UPDATE '.$this->_db->nameQuote($this->_tbl).
+			' SET '.$this->_db->nameQuote('state').' = '.(int) $state .
 			' WHERE ('.$where.')' .
 			$checkin
 		);

@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: default.php 21837 2011-07-12 18:12:35Z dextercowley $
+ * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	Templates.hathor
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -113,7 +113,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 					<?php if ($item->home=='0' || $item->home=='1'):?>
 						<?php echo JHtml::_('jgrid.isdefault', $item->home!='0', $i, 'styles.', $canChange && $item->home!='1');?>
 					<?php elseif ($canChange):?>
-						<a href="<?php echo JRoute::_('index.php?option=com_templates&task=styles.unsetDefault&cid[]='.$item->id.'&'.JUtility::getToken().'=1');?>">
+						<a href="<?php echo JRoute::_('index.php?option=com_templates&task=styles.unsetDefault&cid[]='.$item->id.'&'.JSession::getFormToken().'=1');?>">
 							<?php echo JHtml::_('image', 'mod_languages/'.$item->image.'.gif', $item->language_title, array('title'=>JText::sprintf('COM_TEMPLATES_GRID_UNSET_LANGUAGE', $item->language_title)), true);?>
 						</a>
 					<?php else:?>

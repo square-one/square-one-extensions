@@ -1,14 +1,12 @@
 <?php
 /**
- * @version		$Id: emailcloak.php 21322 2011-05-11 01:10:29Z dextercowley $
+ * @version		$Id$
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 // No direct access.
 defined('_JEXEC') or die;
-
-jimport('joomla.plugin.plugin');
 
 /**
  * Email cloack plugin class.

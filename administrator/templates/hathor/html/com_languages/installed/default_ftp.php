@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: default_ftp.php 21529 2011-06-11 22:17:15Z chdemko $
+ * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	Templates.hathor
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -15,7 +15,7 @@ defined('_JEXEC') or die;
 
 		<?php echo JText::_('COM_LANGUAGES_FTP_DESC'); ?>
 
-		<?php if (JError::isError($ftp)): ?>
+		<?php if ($ftp instanceof Exception): ?>
 			<p class="warning"><?php echo JText::_($ftp->message); ?></p>
 		<?php endif; ?>
 

@@ -1,6 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
  * @version		$Id: contact.php 21593 2011-06-21 02:45:51Z dextercowley $
+=======
+ * @version		$Id$
+>>>>>>> remotes/joomla/master
  * @package		Joomla.Administrator
  * @subpackage	com_contact
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -88,7 +92,10 @@ class ContactModelContact extends JModelAdmin
 	 */
 	public function getForm($data = array(), $loadData = true)
 	{
+<<<<<<< HEAD
 		jimport('joomla.form.form');
+=======
+>>>>>>> remotes/joomla/master
 		JForm::addFieldPath('JPATH_ADMINISTRATOR/components/com_users/models/fields');
 
 		// Get the form.
@@ -159,6 +166,7 @@ class ContactModelContact extends JModelAdmin
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Method to perform batch operations on a category or a set of contacts.
 	 *
 	 * @param	array	$commands	An array of commands to perform.
@@ -240,6 +248,8 @@ class ContactModelContact extends JModelAdmin
 	}
 
 	/**
+=======
+>>>>>>> remotes/joomla/master
 	 * Prepare and sanitise the table prior to saving.
 	 *
 	 * @param	JTable	$table
@@ -262,7 +272,11 @@ class ContactModelContact extends JModelAdmin
 
 		if (empty($table->id)) {
 			// Set the values
+<<<<<<< HEAD
 			//$table->created	= $date->toMySQL();
+=======
+			//$table->created	= $date->toSql();
+>>>>>>> remotes/joomla/master
 
 			// Set ordering to the last item if not set
 			if (empty($table->ordering)) {
@@ -275,7 +289,11 @@ class ContactModelContact extends JModelAdmin
 		}
 		else {
 			// Set the values
+<<<<<<< HEAD
 			//$table->modified	= $date->toMySQL();
+=======
+			//$table->modified	= $date->toSql();
+>>>>>>> remotes/joomla/master
 			//$table->modified_by	= $user->get('id');
 		}
 	}
@@ -323,9 +341,15 @@ class ContactModelContact extends JModelAdmin
 			$db = $this->getDbo();
 
 			$db->setQuery(
+<<<<<<< HEAD
 				'UPDATE #__contact_details AS a' .
 				' SET a.featured = '.(int) $value.
 				' WHERE a.id IN ('.implode(',', $pks).')'
+=======
+				'UPDATE #__contact_details' .
+				' SET featured = '.(int) $value.
+				' WHERE id IN ('.implode(',', $pks).')'
+>>>>>>> remotes/joomla/master
 			);
 			if (!$db->query()) {
 				throw new Exception($db->getErrorMsg());
@@ -345,4 +369,8 @@ class ContactModelContact extends JModelAdmin
 
 		return true;
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> remotes/joomla/master

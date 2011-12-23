@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: edit.php 21663 2011-06-23 13:51:35Z chdemko $
+ * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	Templates.hathor
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -96,6 +96,9 @@ $canDo = MenusHelper::getActions();
 
 				<li><?php echo $this->form->getLabel('parent_id'); ?>
 				<?php echo $this->form->getInput('parent_id'); ?></li>
+
+				<li><?php echo $this->form->getLabel('menuordering'); ?>
+				<?php echo $this->form->getInput('menuordering'); ?></li>
 
 				<li><?php echo $this->form->getLabel('browserNav'); ?>
 				<?php echo $this->form->getInput('browserNav'); ?></li>

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @version		$Id: default.php 21020 2011-03-27 06:52:01Z infograf768 $
+ * @version		$Id$
  * @package		Joomla.Site
  * @subpackage	com_newsfeeds
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -19,20 +19,15 @@ $direction = " ";
 
 if ($lang->isRTL() && $myrtl == 0) {
 	$direction = " redirect-rtl";
-} else
-	if ($lang->isRTL() && $myrtl == 1) {
+} elseif ($lang->isRTL() && $myrtl == 1) {
 		$direction = " redirect-ltr";
-	} else
-		if ($lang->isRTL() && $myrtl == 2) {
+	} elseif ($lang->isRTL() && $myrtl == 2) {
 			$direction = " redirect-rtl";
-		} else
-			if ($myrtl == 0) {
+		} elseif ($myrtl == 0) {
 				$direction = " redirect-ltr";
-			} else
-				if ($myrtl == 1) {
+			} elseif ($myrtl == 1) {
 					$direction = " redirect-ltr";
-				} else
-					if ($myrtl == 2) {
+				} elseif ($myrtl == 2) {
 						$direction = " redirect-rtl";
 					}
 ?>
@@ -86,4 +81,3 @@ if ($lang->isRTL() && $myrtl == 0) {
 		<?php endforeach; ?>
 		</ol>
 </div>
-

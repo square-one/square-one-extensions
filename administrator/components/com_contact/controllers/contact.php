@@ -1,6 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
  * @version		$Id: contact.php 20196 2011-01-09 02:40:25Z ian $
+=======
+ * @version		$Id$
+>>>>>>> remotes/joomla/master
  * @package		Joomla.Administrator
  * @subpackage	com_contact
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -95,4 +99,8 @@ class ContactControllerContact extends JControllerForm
 		// Since there is no asset tracking, revert to the component permissions.
 		return parent::allowEdit($data, $key);
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> remotes/joomla/master

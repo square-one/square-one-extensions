@@ -202,10 +202,6 @@ form fieldset dd
 .login-fields label
 {float:right}
 
-#system-debug li {
-direction: ltr;
-}
-
 /* ++++++++++++++  pagination  ++++++++++++++ */
 
 #main .pagination
@@ -213,6 +209,7 @@ direction: ltr;
 	float:right;
 	text-align:right;
 	padding:10px 10px 0px 0px;
+	clear:both;
 
 }
 
@@ -465,3 +462,20 @@ ul.latestnews li a, ul.mostread li a {
 ul.menu li ul li ul li ul li ul {
 	padding-right: 7px;
 }
+
+#system-message dd.notice ul,
+#system-message dd.error ul,
+#system-message dd.message  ul {
+        background-position: 100% 0!important;
+        padding: 10px 40px 10px 10px!important;
+}
+#system-message dd.message  ul {
+        background-image:url(../images/system/notice-info_rtl.png)!important;
+}
+#system-message dd.notice ul {
+        background-image:url("../images/system/notice-note_rtl.png")!important;
+}
+#system-message dd.error ul {
+        background-image:url(../images/system/notice-alert_rtl.png)!important;
+}
+

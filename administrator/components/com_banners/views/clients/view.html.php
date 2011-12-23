@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: view.html.php 21908 2011-07-20 16:27:58Z infograf768 $
+ * @version		$Id$
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
@@ -72,10 +72,10 @@ class BannersViewClients extends JView
 		if ($this->state->get('filter.state') == -2 && $canDo->get('core.delete')) {
 			JToolBarHelper::deleteList('', 'clients.delete', 'JTOOLBAR_EMPTY_TRASH');
 			JToolBarHelper::divider();
-		} else if ($canDo->get('core.edit.state')) {
+		} elseif ($canDo->get('core.edit.state')) {
 			JToolBarHelper::trash('clients.trash');
 			JToolBarHelper::divider();
-		}	
+		}
 
 		if ($canDo->get('core.admin')) {
 			JToolBarHelper::preferences('com_banners');

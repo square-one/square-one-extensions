@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: edit_params.php 21529 2011-06-11 22:17:15Z chdemko $
+ * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	Templates.hathor
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.

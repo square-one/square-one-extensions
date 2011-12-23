@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: link.php 20196 2011-01-09 02:40:25Z ian $
+ * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	com_redirect
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -88,7 +88,7 @@ class RedirectTableLink extends JTable
 	public function store($updateNulls = false)
 	{
 		// Initialise variables.
-		$date = JFactory::getDate()->toMySQL();
+		$date = JFactory::getDate()->toSql();
 
 		if ($this->id) {
 			// Existing item

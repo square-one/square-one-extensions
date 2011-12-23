@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: ordering.php 21097 2011-04-07 15:38:03Z dextercowley $
+ * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	com_newsfeeds
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -9,7 +9,6 @@
 
 defined('JPATH_BASE') or die;
 
-jimport('joomla.html.html');
 jimport('joomla.form.formfield');
 
 /**

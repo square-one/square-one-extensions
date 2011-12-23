@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: router.php 21097 2011-04-07 15:38:03Z dextercowley $
+ * @version		$Id$
  * @package		Joomla.Site
  * @subpackage	com_weblinks
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -71,7 +71,7 @@ function WeblinksBuildRoute(&$query)
 			if ($view == 'weblink' && isset($query['catid'])) {
 				$catid = $query['catid'];
 			}
-			else if (isset($query['id'])) {
+			elseif (isset($query['id'])) {
 				$catid = $query['id'];
 			}
 

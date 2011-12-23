@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: default.php 21663 2011-06-23 13:51:35Z chdemko $
+ * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	Templates.hathor
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -155,7 +155,7 @@ $saveOrder	= $listOrder == 'ordering';
 					<?php endif; ?>
 				</td>
                 <td class="center">
-					<?php echo JHtml::_('jgrid.published', $item->published, $i, 'modules.', $canChange, 'cb', $item->publish_up, $item->publish_down); ?>
+					<?php echo JHtml::_('modules.state', $item->published, $i, $canChange, 'cb'); ?>
 				</td>
 				<td class="center">
 					<?php echo $item->position; ?>

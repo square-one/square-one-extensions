@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: edit_options.php 21744 2011-07-06 08:40:23Z chdemko $
+ * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	Templates.hathor
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -83,4 +83,3 @@ defined('_JEXEC') or die;
 			</ul>
 		</fieldset>
 <?php endforeach;?>
-

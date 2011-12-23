@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: messages.php 20267 2011-01-11 03:44:44Z eddieajau $
+ * @version		$Id$
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
@@ -117,7 +117,7 @@ class MessagesModelMessages extends JModelList
 		if (is_numeric($state)) {
 			$query->where('a.state = '.(int) $state);
 		}
-		else if ($state === '') {
+		elseif ($state === '') {
 			$query->where('(a.state IN (0, 1))');
 		}
 

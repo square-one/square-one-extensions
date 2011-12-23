@@ -27,7 +27,11 @@
 			paste_text_sticky : false,
 			paste_text_sticky_default : false,
 			paste_text_notifyalways : false,
+<<<<<<< HEAD
 			paste_text_linebreaktype : "p",
+=======
+			paste_text_linebreaktype : "combined",
+>>>>>>> remotes/joomla/master
 			paste_text_replacements : [
 				[/\u2026/g, "..."],
 				[/[\x93\x94\u201c\u201d]/g, '"'],
@@ -103,7 +107,11 @@
 
 				// Plain text option active?
 				if ((!force_rich) && (ed.pasteAsPlainText)) {
+<<<<<<< HEAD
 					t._insertPlainText(ed, dom, o.content);
+=======
+					t._insertPlainText(o.content);
+>>>>>>> remotes/joomla/master
 
 					if (!getParam(ed, "paste_text_sticky")) {
 						ed.pasteAsPlainText = false;
@@ -130,7 +138,11 @@
 						if (getParam(ed, "paste_text_sticky")) {
 							ed.windowManager.alert(ed.translate('paste.plaintext_mode_sticky'));
 						} else {
+<<<<<<< HEAD
 							ed.windowManager.alert(ed.translate('paste.plaintext_mode_sticky'));
+=======
+							ed.windowManager.alert(ed.translate('paste.plaintext_mode'));
+>>>>>>> remotes/joomla/master
 						}
 
 						if (!getParam(ed, "paste_text_notifyalways")) {
@@ -155,7 +167,11 @@
 
 					if (ed.pasteAsPlainText) {
 						e.preventDefault();
+<<<<<<< HEAD
 						process({content : textContent.replace(/\r?\n/g, '<br />')});
+=======
+						process({content : dom.encode(textContent).replace(/\r?\n/g, '<br />')});
+>>>>>>> remotes/joomla/master
 						return;
 					}
 				}
@@ -367,7 +383,11 @@
 				process([
 					[/<br><br>/g, '<BR><BR>'], // Replace multiple BR elements with uppercase BR to keep them intact
 					[/<br>/g, ' '], // Replace single br elements with space since they are word wrap BR:s
+<<<<<<< HEAD
 					[/<BR><BR>/g, '<br>'], // Replace back the double brs but into a single BR
+=======
+					[/<BR><BR>/g, '<br>'] // Replace back the double brs but into a single BR
+>>>>>>> remotes/joomla/master
 				]);
 			}
 
@@ -756,6 +776,7 @@
 		 * plugin, and requires minimal changes to add the new functionality.
 		 * Speednet - June 2009
 		 */
+<<<<<<< HEAD
 		_insertPlainText : function(ed, dom, h) {
 			var i, len, pos, rpos, node, breakElms, before, after,
 				w = ed.getWin(),
@@ -765,10 +786,18 @@
 				inArray = tinymce.inArray,
 				linebr = getParam(ed, "paste_text_linebreaktype"),
 				rl = getParam(ed, "paste_text_replacements");
+=======
+		_insertPlainText : function(content) {
+			var ed = this.editor,
+				linebr = getParam(ed, "paste_text_linebreaktype"),
+				rl = getParam(ed, "paste_text_replacements"),
+				is = tinymce.is;
+>>>>>>> remotes/joomla/master
 
 			function process(items) {
 				each(items, function(v) {
 					if (v.constructor == RegExp)
+<<<<<<< HEAD
 						h = h.replace(v, "");
 					else
 						h = h.replace(v[0], v[1]);
@@ -778,6 +807,17 @@
 			if ((typeof(h) === "string") && (h.length > 0)) {
 				// If HTML content with line-breaking tags, then remove all cr/lf chars because only tags will break a line
 				if (/<(?:p|br|h[1-6]|ul|ol|dl|table|t[rdh]|div|blockquote|fieldset|pre|address|center)[^>]*>/i.test(h)) {
+=======
+						content = content.replace(v, "");
+					else
+						content = content.replace(v[0], v[1]);
+				});
+			};
+
+			if ((typeof(content) === "string") && (content.length > 0)) {
+				// If HTML content with line-breaking tags, then remove all cr/lf chars because only tags will break a line
+				if (/<(?:p|br|h[1-6]|ul|ol|dl|table|t[rdh]|div|blockquote|fieldset|pre|address|center)[^>]*>/i.test(content)) {
+>>>>>>> remotes/joomla/master
 					process([
 						/[\n\r]+/g
 					]);
@@ -794,6 +834,7 @@
 					[/<\/t[dh]>\s*<t[dh][^>]*>/gi, "\t"],		// Table cells get tabs betweem them
 					/<[a-z!\/?][^>]*>/gi,						// Delete all remaining tags
 					[/&nbsp;/gi, " "],							// Convert non-break spaces to regular spaces (remember, *plain text*)
+<<<<<<< HEAD
 					[/(?:(?!\n)\s)*(\n+)(?:(?!\n)\s)*/gi, "$1"],	// Cool little RegExp deletes whitespace around linebreak chars.
 					[/\n{3,}/g, "\n\n"],							// Max. 2 consecutive linebreaks
 					/^\s+|\s+$/g									// Trim the front & back
@@ -811,11 +852,24 @@
 					process(rl);
 				}
 				else if (is(rl, "string")) {
+=======
+					[/(?:(?!\n)\s)*(\n+)(?:(?!\n)\s)*/gi, "$1"],// Cool little RegExp deletes whitespace around linebreak chars.
+					[/\n{3,}/g, "\n\n"]							// Max. 2 consecutive linebreaks
+				]);
+
+				content = ed.dom.decode(tinymce.html.Entities.encodeRaw(content));
+
+				// Perform default or custom replacements
+				if (is(rl, "array")) {
+					process(rl);
+				} else if (is(rl, "string")) {
+>>>>>>> remotes/joomla/master
 					process(new RegExp(rl, "gi"));
 				}
 
 				// Treat paragraphs as specified in the config
 				if (linebr == "none") {
+<<<<<<< HEAD
 					process([
 						[/\n+/g, " "]
 					]);
@@ -829,10 +883,34 @@
 					process([
 						/^\s+|\s+$/g,
 						[/\n\n/g, "</p><p>"],
+=======
+					// Convert all line breaks to space
+					process([
+						[/\n+/g, " "]
+					]);
+				} else if (linebr == "br") {
+					// Convert all line breaks to <br />
+					process([
+						[/\n/g, "<br />"]
+					]);
+				} else if (linebr == "p") {
+					// Convert all line breaks to <p>...</p>
+					process([
+						[/\n+/g, "</p><p>"],
+						[/^(.*<\/p>)(<p>)$/, '<p>$1']
+					]);
+				} else {
+					// defaults to "combined"
+					// Convert single line breaks to <br /> and double line breaks to <p>...</p>
+					process([
+						[/\n\n/g, "</p><p>"],
+						[/^(.*<\/p>)(<p>)$/, '<p>$1'],
+>>>>>>> remotes/joomla/master
 						[/\n/g, "<br />"]
 					]);
 				}
 
+<<<<<<< HEAD
 				// This next piece of code handles the situation where we're pasting more than one paragraph of plain
 				// text, and we are pasting the content into the middle of a block node in the editor.  The block
 				// node gets split at the selection point into "Para A" and "Para B" (for the purposes of explaining).
@@ -902,6 +980,9 @@
 						d.body.scrollTop = y < vp.y ? y : y - vp.h + 25;
 					}
 				}, 0);
+=======
+				ed.execCommand('mceInsertContent', false, content);
+>>>>>>> remotes/joomla/master
 			}
 		},
 

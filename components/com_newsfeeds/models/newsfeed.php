@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: newsfeed.php 21593 2011-06-21 02:45:51Z dextercowley $
+ * @version		$Id$
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
@@ -99,7 +99,7 @@ class NewsfeedsModelNewsfeed extends JModelItem
 
 				// Filter by start and end dates.
 				$nullDate = $db->Quote($db->getNullDate());
-				$nowDate = $db->Quote(JFactory::getDate()->toMySQL());
+				$nowDate = $db->Quote(JFactory::getDate()->toSql());
 
 				// Filter by published state.
 				$published = $this->getState('filter.published');

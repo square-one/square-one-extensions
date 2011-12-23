@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: newsfeed.php 21700 2011-06-28 04:32:41Z dextercowley $
+ * @version		$Id$
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
@@ -187,7 +187,7 @@ class NewsfeedsModelNewsfeed extends JModelAdmin
 
 		if (empty($table->id)) {
 			// Set the values
-			//$table->created	= $date->toMySQL();
+			//$table->created	= $date->toSql();
 
 			// Set ordering to the last item if not set
 			if (empty($table->ordering)) {
@@ -200,7 +200,7 @@ class NewsfeedsModelNewsfeed extends JModelAdmin
 		}
 		else {
 			// Set the values
-			//$table->modified	= $date->toMySQL();
+			//$table->modified	= $date->toSql();
 			//$table->modified_by	= $user->get('id');
 		}
 	}

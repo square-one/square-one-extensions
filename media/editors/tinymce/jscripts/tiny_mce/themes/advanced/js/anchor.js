@@ -30,9 +30,16 @@ var AnchorDialog = {
 			ed.selection.collapse(1);
 
 		elm = ed.dom.getParent(ed.selection.getNode(), 'A');
+<<<<<<< HEAD
 		if (elm)
 			elm.name = name;
 		else
+=======
+		if (elm) {
+			elm.setAttribute('name', name);
+			elm.name = name;
+		} else
+>>>>>>> remotes/joomla/master
 			ed.execCommand('mceInsertContent', 0, ed.dom.createHTML('a', {name : name, 'class' : 'mceItemAnchor'}, ''));
 
 		tinyMCEPopup.close();

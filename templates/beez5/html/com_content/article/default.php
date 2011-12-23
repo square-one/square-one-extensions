@@ -12,6 +12,7 @@ defined('_JEXEC') or die;
 
 $app = JFactory::getApplication();
 $templateparams = $app->getTemplate(true)->params;
+$images = json_decode($this->item->images);
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 
 // Create shortcut to parameters.
@@ -118,7 +119,7 @@ else :
 <?php endif; ?>
 <?php if ($params->get('show_publish_date')) : ?>
 		<dd class="published">
-		<?php echo JText::sprintf('COM_CONTENT_PUBLISHED_DATE', JHtml::_('date',$this->item->publish_up, JText::_('DATE_FORMAT_LC2'))); ?>
+		<?php echo JText::sprintf('COM_CONTENT_PUBLISHED_DATE_ON', JHtml::_('date',$this->item->publish_up, JText::_('DATE_FORMAT_LC2'))); ?>
 		</dd>
 <?php endif; ?>
 <?php if ($params->get('show_author') && !empty($this->item->author )) : ?>
@@ -146,6 +147,20 @@ else :
 
 	<?php if (isset ($this->item->toc)) : ?>
 		<?php echo $this->item->toc; ?>
+	<?php endif; ?>
+
+	<?php // This loads the block of links ?>
+	<?php echo $this->loadTemplate('links'); ?>
+
+	<?php  if (!empty($images->image_fulltext)) : ?>
+	<div class="img-fulltext-"<?php echo $images->float_fulltext ?>">
+	<img
+		<?php if ($images->image_fulltext_caption):
+			echo 'class="caption"'.' title="' .$images->image_fulltext_caption .'"';
+		endif; ?>
+		style="float:<?php echo $images->float_fulltext ?>"
+		src="<?php echo $images->image_fulltext; ?>" alt="<?php echo $images->image_fulltext_alt; ?>"/>
+	</div>
 	<?php endif; ?>
 
 	<?php echo $this->item->text; ?>

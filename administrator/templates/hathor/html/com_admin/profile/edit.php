@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: edit.php 21837 2011-07-12 18:12:35Z dextercowley $
+ * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	template.hathor
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -29,7 +29,7 @@ $fieldsets = $this->form->getFieldsets();
 	}
 </script>
 
-<form action="<?php echo JRoute::_('index.php?option=com_admin&view=profile&layout=edit&id='.$this->item->id); ?>" method="post" name="adminForm" id="profile-form" class="form-validate">
+<form action="<?php echo JRoute::_('index.php?option=com_admin&view=profile&layout=edit&id='.$this->item->id); ?>" method="post" name="adminForm" id="profile-form" class="form-validate" enctype="multipart/form-data">
 	<div class="col main-section">
 		<fieldset class="adminform">
 			<legend><?php echo JText::_('COM_ADMIN_USER_ACCOUNT_DETAILS'); ?></legend>

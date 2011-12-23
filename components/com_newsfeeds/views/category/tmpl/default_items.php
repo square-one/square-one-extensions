@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: default_items.php 21700 2011-06-28 04:32:41Z dextercowley $
+ * @version		$Id$
  * @package		Joomla.Site
  * @subpackage	com_newsfeeds
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.

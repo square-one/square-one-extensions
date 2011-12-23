@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /**
- * @version		$Id: colour_blue.css 22140 2011-09-22 23:55:05Z dextercowley $
+ * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	templates.hathor
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -873,6 +873,10 @@ a img.calendar {
 	background-image: url(../images/admin/publish_y.png);
 }
 
+.jgrid span.warning	{
+	background-image: url(../images/admin/publish_y.png);
+}
+
 /**
  * Menu Icons
  * These icons are used on the Administrator menu
@@ -1105,6 +1109,10 @@ a img.calendar {
 
 .icon-16-user {
 	background-image: url(../images/menu/icon-16-user.png);
+}
+
+.icon-16-user-note {
+	background-image: url(../images/menu/icon-16-user-note.png);
 }
 
 .icon-16-delete {

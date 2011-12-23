@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: helper.php 21518 2011-06-10 21:38:12Z chdemko $
+ * @version		$Id$
  * @package		Joomla.Site
  * @subpackage	mod_random_image
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.

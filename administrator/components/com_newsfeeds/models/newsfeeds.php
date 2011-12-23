@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: newsfeeds.php 21590 2011-06-20 20:13:43Z chdemko $
+ * @version		$Id$
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
@@ -132,11 +132,11 @@ class NewsfeedsModelNewsfeeds extends JModelList
 				' a.published, a.access, a.ordering, a.language, a.publish_up, a.publish_down'
 			)
 		);
-		$query->from('`#__newsfeeds` AS a');
+		$query->from($db->nameQuote('#__newsfeeds').' AS a');
 
 		// Join over the language
 		$query->select('l.title AS language_title');
-		$query->join('LEFT', '`#__languages` AS l ON l.lang_code = a.language');
+		$query->join('LEFT', $db->nameQuote('#__languages').' AS l ON l.lang_code = a.language');
 
 		// Join over the users for the checked out user.
 		$query->select('uc.name AS editor');
@@ -167,7 +167,7 @@ class NewsfeedsModelNewsfeeds extends JModelList
 		if (is_numeric($published)) {
 			$query->where('a.published = '.(int) $published);
 		}
-		else if ($published === '') {
+		elseif ($published === '') {
 			$query->where('(a.published IN (0, 1))');
 		}
 
@@ -200,7 +200,7 @@ class NewsfeedsModelNewsfeeds extends JModelList
 		$orderCol	= $this->state->get('list.ordering');
 		$orderDirn	= $this->state->get('list.direction');
 		if ($orderCol == 'a.ordering' || $orderCol == 'category_title') {
-			$orderCol = 'category_title '.$orderDirn.', a.ordering';
+			$orderCol = 'c.title '.$orderDirn.', a.ordering';
 		}
 		$query->order($db->getEscaped($orderCol.' '.$orderDirn));
 

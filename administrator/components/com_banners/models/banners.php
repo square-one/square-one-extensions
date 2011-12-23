@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: banners.php 22249 2011-10-16 17:19:28Z dextercowley $
+ * @version		$Id$
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
@@ -62,7 +62,7 @@ class BannersModelBanners extends JModelList
 		if (!isset($this->cache['categoryorders'])) {
 			$db		= $this->getDbo();
 			$query	= $db->getQuery(true);
-			$query->select('MAX(ordering) as `max`, catid');
+			$query->select('MAX(ordering) as '.$db->nameQuote('max').', catid');
 			$query->select('catid');
 			$query->from('#__banners');
 			$query->group('catid');
@@ -98,11 +98,11 @@ class BannersModelBanners extends JModelList
 				'a.language, a.publish_up, a.publish_down'
 			)
 		);
-		$query->from('`#__banners` AS a');
+		$query->from($db->nameQuote('#__banners').' AS a');
 
 		// Join over the language
 		$query->select('l.title AS language_title');
-		$query->join('LEFT', '`#__languages` AS l ON l.lang_code = a.language');
+		$query->join('LEFT', $db->nameQuote('#__languages').' AS l ON l.lang_code = a.language');
 
 		// Join over the users for the checked out user.
 		$query->select('uc.name AS editor');
@@ -120,7 +120,7 @@ class BannersModelBanners extends JModelList
 		$published = $this->getState('filter.state');
 		if (is_numeric($published)) {
 			$query->where('a.state = '.(int) $published);
-		} else if ($published === '') {
+		} elseif ($published === '') {
 			$query->where('(a.state IN (0, 1))');
 		}
 
@@ -156,8 +156,10 @@ class BannersModelBanners extends JModelList
 		$orderCol	= $this->state->get('list.ordering', 'ordering');
 		$orderDirn	= $this->state->get('list.direction', 'ASC');
 		if ($orderCol == 'ordering' || $orderCol == 'category_title') {
-			$orderCol = 'category_title '.$orderDirn.', ordering';
+			$orderCol = 'c.title '.$orderDirn.', a.ordering';
 		}
+		if($orderCol == 'client_name')
+			$orderCol = 'cl.name';
 		$query->order($db->getEscaped($orderCol.' '.$orderDirn));
 
 		//echo nl2br(str_replace('#__','jos_',$query));
@@ -234,6 +236,6 @@ class BannersModelBanners extends JModelList
 		$this->setState('params', $params);
 
 		// List state information.
-		parent::populateState('name', 'asc');
+		parent::populateState('a.name', 'asc');
 	}
 }

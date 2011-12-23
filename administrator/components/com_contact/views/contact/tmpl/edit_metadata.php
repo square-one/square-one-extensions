@@ -1,6 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
  * @version		$Id: edit_metadata.php 21097 2011-04-07 15:38:03Z dextercowley $
+=======
+ * @version		$Id$
+>>>>>>> remotes/joomla/master
  * @package		Joomla.Administrator
  * @subpackage	com_contact
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -35,4 +39,8 @@ foreach ($fieldSets as $name => $fieldSet) :
 			<?php endforeach; ?>
 		</ul>
 	</fieldset>
+<<<<<<< HEAD
 <?php endforeach; ?>
+=======
+<?php endforeach; ?>
+>>>>>>> remotes/joomla/master

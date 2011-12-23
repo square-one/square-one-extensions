@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: contact.php 21991 2011-08-18 15:43:40Z infograf768 $
+ * @version		$Id$
  * @package		Joomla.Site
  * @subpackage	Contact
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -70,7 +70,7 @@ class ContactControllerContact extends JControllerForm
 			$errors	= $model->getErrors();
 			// Push up to three validation messages out to the user.
 			for ($i = 0, $n = count($errors); $i < $n && $i < 3; $i++) {
-				if (JError::isError($errors[$i])) {
+				if ($errors[$i] instanceof Exception) {
 					$app->enqueueMessage($errors[$i]->getMessage(), 'warning');
 				} else {
 					$app->enqueueMessage($errors[$i], 'warning');
@@ -89,7 +89,7 @@ class ContactControllerContact extends JControllerForm
 		$results	= $dispatcher->trigger('onValidateContact', array(&$contact, &$data));
 
 		foreach ($results as $result) {
-			if (JError::isError($result)) {
+			if ($result instanceof Exception) {
 				return false;
 			}
 		}

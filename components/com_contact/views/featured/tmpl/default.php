@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: default.php 21518 2011-06-10 21:38:12Z chdemko $
+ * @version		$Id$
  * @package		Joomla.Site
  * @subpackage	com_contact
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -36,4 +36,3 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 <?php endif; ?>
 
 </div>
-

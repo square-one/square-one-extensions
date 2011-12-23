@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: download.php 20196 2011-01-09 02:40:25Z ian $
+ * @version		$Id$
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
@@ -31,10 +31,10 @@ class BannersModelDownload extends JModelForm
 	protected function populateState()
 	{
 		jimport('joomla.utilities.utility');
-		$basename = JRequest::getString(JUtility::getHash($this->_context.'.basename'),'__SITE__','cookie');
+		$basename = JRequest::getString(JApplication::getHash($this->_context.'.basename'),'__SITE__','cookie');
 		$this->setState('basename',$basename);
 
-		$compressed = JRequest::getInt(JUtility::getHash($this->_context.'.compressed'),1,'cookie');
+		$compressed = JRequest::getInt(JApplication::getHash($this->_context.'.compressed'),1,'cookie');
 		$this->setState('compressed',$compressed);
 	}
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: default.php 20196 2011-01-09 02:40:25Z ian $
+ * @version		$Id$
  * @package		Joomla.Site
  * @subpackage	mod_banners
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -51,7 +51,7 @@ $baseurl = JURI::base();
 					<?php elseif ($target == 2):?>
 						<?php // open in a popup window?>
 						<a
-							href="javascript:void window.open('<?php echo $link;?>', '',
+							href="<?php echo $link;?>" onclick="window.open(this.href, '',
 								'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=780,height=550');
 								return false"
 							title="<?php echo htmlspecialchars($item->name, ENT_QUOTES, 'UTF-8');?>">
@@ -113,4 +113,3 @@ $baseurl = JURI::base();
 	</div>
 <?php endif; ?>
 </div>
-

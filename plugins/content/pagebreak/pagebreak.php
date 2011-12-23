@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: pagebreak.php 21811 2011-07-11 06:50:16Z infograf768 $
+ * @version		$Id$
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
@@ -196,7 +196,7 @@ class plgContentPagebreak extends JPlugin
 						}
 						$t[] = (string) JHtml::_($style.'.panel', $match['title'],'basic-details');
 					}
-					$t[] = (string) $subtext; 
+					$t[] = (string) $subtext;
 				}
 
 				$t[] = (string) JHtml::_($style.'.end');

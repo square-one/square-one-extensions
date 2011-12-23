@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: modules.php 21097 2011-04-07 15:38:03Z dextercowley $
+ * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	Templates.hathor
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -39,7 +39,7 @@ function modChrome_xhtmlid($module, &$params, &$attribs)
 
 		</div>
 		<?php
-	} else if ($attribs['id'] == "submenu-box") {
+	} elseif ($attribs['id'] == "submenu-box") {
 		?>
 		<div id="no-submenu"></div>
 		<?php

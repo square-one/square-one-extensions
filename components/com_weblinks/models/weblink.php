@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: weblink.php 21481 2011-06-08 00:38:29Z dextercowley $
+ * @version		$Id$
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
@@ -82,7 +82,7 @@ class WeblinksModelWeblink extends JModelItem
 				$properties = $table->getProperties(1);
 				$this->_item = JArrayHelper::toObject($properties, 'JObject');
 			}
-			else if ($error = $table->getError()) {
+			elseif ($error = $table->getError()) {
 				$this->setError($error);
 			}
 		}

@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: view.html.php 21946 2011-08-03 16:15:35Z infograf768 $
+ * @version		$Id$
  * @package		Joomla.Site
  * @subpackage	com_contact
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -11,7 +11,6 @@
 defined('_JEXEC') or die;
 
 jimport('joomla.application.component.view');
-jimport('joomla.mail.helper');
 
 /**
  * HTML View class for the Contacts component

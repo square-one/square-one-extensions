@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: geshi.php 21097 2011-04-07 15:38:03Z dextercowley $
+ * @version		$Id$
  * @package		Joomla.Plugin
  * @subpackage	Content.geshi
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -9,8 +9,6 @@
 
 // No direct access.
 defined('_JEXEC') or die;
-
-jimport('joomla.plugin.plugin');
 
 class plgContentGeshi extends JPlugin
 {

@@ -8,6 +8,36 @@
 		return document.getElementById(id);
 	}
 
+<<<<<<< HEAD
+=======
+	function clone(obj) {
+		var i, len, copy, attr;
+
+		if (null == obj || "object" != typeof obj)
+			return obj;
+
+		// Handle Array
+		if ('length' in obj) {
+			copy = [];
+
+			for (i = 0, len = obj.length; i < len; ++i) {
+				copy[i] = clone(obj[i]);
+			}
+
+			return copy;
+		}
+
+		// Handle Object
+		copy = {};
+		for (attr in obj) {
+			if (obj.hasOwnProperty(attr))
+				copy[attr] = clone(obj[attr]);
+		}
+
+		return copy;
+	}
+
+>>>>>>> remotes/joomla/master
 	function getVal(id) {
 		var elm = get(id);
 
@@ -39,9 +69,15 @@
 
 	window.Media = {
 		init : function() {
+<<<<<<< HEAD
 			var html, editor;
 
 			this.editor = editor = tinyMCEPopup.editor;
+=======
+			var html, editor, self = this;
+
+			self.editor = editor = tinyMCEPopup.editor;
+>>>>>>> remotes/joomla/master
 
 			// Setup file browsers and color pickers
 			get('filebrowsercontainer').innerHTML = getBrowserHTML('filebrowser','src','media','media');
@@ -53,7 +89,11 @@
 			get('audio_altsource2_filebrowser').innerHTML = getBrowserHTML('audio_filebrowser_altsource2','audio_altsource2','media','media');
 			get('video_poster_filebrowser').innerHTML = getBrowserHTML('filebrowser_poster','video_poster','media','image');
 
+<<<<<<< HEAD
 			html = this.getMediaListHTML('medialist', 'src', 'media', 'media');
+=======
+			html = self.getMediaListHTML('medialist', 'src', 'media', 'media');
+>>>>>>> remotes/joomla/master
 			if (html == "")
 				get("linklistrow").style.display = 'none';
 			else
@@ -77,9 +117,20 @@
 			if (isVisible('filebrowser_poster'))
 				get('video_poster').style.width = '220px';
 
+<<<<<<< HEAD
 			this.data = tinyMCEPopup.getWindowArg('data');
 			this.dataToForm();
 			this.preview();
+=======
+			editor.dom.setOuterHTML(get('media_type'), self.getMediaTypeHTML(editor));
+
+			self.setDefaultDialogSettings(editor);
+			self.data = clone(tinyMCEPopup.getWindowArg('data'));
+			self.dataToForm();
+			self.preview();
+
+			updateColor('bgcolor_pick', 'bgcolor');
+>>>>>>> remotes/joomla/master
 		},
 
 		insert : function() {
@@ -97,7 +148,11 @@
 		},
 
 		moveStates : function(to_form, field) {
+<<<<<<< HEAD
 			var data = this.data, editor = this.editor, data = this.data,
+=======
+			var data = this.data, editor = this.editor,
+>>>>>>> remotes/joomla/master
 				mediaPlugin = editor.plugins.media, ext, src, typeInfo, defaultStates, src;
 
 			defaultStates = {
@@ -209,6 +264,10 @@
 			get('shockwave_options').style.display = 'none';
 			get('windowsmedia_options').style.display = 'none';
 			get('realmedia_options').style.display = 'none';
+<<<<<<< HEAD
+=======
+			get('embeddedaudio_options').style.display = 'none';
+>>>>>>> remotes/joomla/master
 
 			if (get(data.type + '_options'))
 				get(data.type + '_options').style.display = 'block';
@@ -222,6 +281,10 @@
 			setOptions('realmedia', 'autostart,loop,autogotourl,center,imagestatus,maintainaspect,nojava,prefetch,shuffle,console,controls,numloop,scriptcallbacks');
 			setOptions('video', 'poster,autoplay,loop,muted,preload,controls');
 			setOptions('audio', 'autoplay,loop,preload,controls');
+<<<<<<< HEAD
+=======
+			setOptions('embeddedaudio', 'autoplay,loop,controls');
+>>>>>>> remotes/joomla/master
 			setOptions('global', 'id,name,vspace,hspace,bgcolor,align,width,height');
 
 			if (to_form) {
@@ -252,7 +315,11 @@
 					if (data.type == 'flash') {
 						tinymce.each(editor.getParam('flash_video_player_flashvars', {url : '$url', poster : '$poster'}), function(value, name) {
 							if (value == '$url')
+<<<<<<< HEAD
 								data.params.src = parseQueryParams(data.params.flashvars)[name] || data.params.src;
+=======
+								data.params.src = parseQueryParams(data.params.flashvars)[name] || data.params.src || '';
+>>>>>>> remotes/joomla/master
 						});
 					}
 
@@ -260,7 +327,22 @@
 				}
 			} else {
 				src = getVal("src");
+<<<<<<< HEAD
 	
+=======
+
+				// YouTube *NEW*
+				if (src.match(/youtu.be\/[a-z1-9.-_]+/)) {
+					data.width = 425;
+					data.height = 350;
+					data.params.frameborder = '0';
+					data.type = 'iframe';
+					src = 'http://www.youtube.com/embed/' + src.match(/youtu.be\/([a-z1-9.-_]+)/)[1];
+					setVal('src', src);
+					setVal('media_type', data.type);
+				}
+
+>>>>>>> remotes/joomla/master
 				// YouTube
 				if (src.match(/youtube.com(.+)v=([^&]+)/)) {
 					data.width = 425;
@@ -331,7 +413,11 @@
 				this.panel = 'source';
 			} else {
 				if (this.panel == 'source') {
+<<<<<<< HEAD
 					this.data = this.editor.plugins.media.htmlToData(getVal('source'));
+=======
+					this.data = clone(this.editor.plugins.media.htmlToData(getVal('source')));
+>>>>>>> remotes/joomla/master
 					this.dataToForm();
 					this.panel = '';
 				}
@@ -379,6 +465,49 @@
 			}
 
 			return "";
+<<<<<<< HEAD
+=======
+		},
+
+		getMediaTypeHTML : function(editor) {
+			function option(media_type){
+				return '<option value="'+media_type+'">'+tinyMCEPopup.editor.translate("media_dlg."+media_type)+'</option>'
+			}
+
+			var invalid_elements = editor.settings.invalid_elements;
+			invalid_elements.toLowerCase();
+
+			var html = "";
+			html += '<select id="media_type" name="media_type" onchange="Media.formToData(\'type\');">';
+			if (invalid_elements.indexOf("video") == -1) {
+				html += option("video");
+			}
+			if (invalid_elements.indexOf("audio") == -1) {
+				html += option("audio");
+			}
+			html += option("flash");
+			html += option("quicktime");
+			html += option("shockwave");
+			html += option("windowsmedia");
+			html += option("realmedia");
+			if (invalid_elements.indexOf("iframe") == -1) {
+				html += option("iframe");
+			}
+
+			if (editor.getParam('media_embedded_audio', false)) {
+				html += option('embeddedaudio');
+			}
+			
+			html += '</select>';
+			return html;
+		},
+
+		setDefaultDialogSettings : function(editor) {
+			var defaultDialogSettings = editor.getParam("media_dialog_defaults", {});
+			tinymce.each(defaultDialogSettings, function(v, k) {
+				setVal(k, v);
+			});
+>>>>>>> remotes/joomla/master
 		}
 	};
 
@@ -386,4 +515,8 @@
 	tinyMCEPopup.onInit.add(function() {
 		Media.init();
 	});
+<<<<<<< HEAD
 })();
+=======
+})();
+>>>>>>> remotes/joomla/master

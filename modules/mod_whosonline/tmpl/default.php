@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: default.php 21322 2011-05-11 01:10:29Z dextercowley $
+ * @version		$Id$
  * @package		Joomla.Site
  * @subpackage	mod_whosonline
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -19,15 +19,12 @@ defined('_JEXEC') or die;
 
 <?php if (($showmode > 0) && count($names)) : ?>
 	<ul  class="whosonline<?php echo $moduleclass_sfx ?>" >
+	<?php if ($params->get('filter_groups')):?>
+		<p><?php echo JText::_('MOD_WHOSONLINE_SAME_GROUP_MESSAGE'); ?></p>	
+	<?php endif;?>
 	<?php foreach($names as $name) : ?>
 		<li>
-			<?php if ($linknames == 1) : ?>
-				<a href="index.php?option=com_users&view=profile&member_id=<?php echo (int) $name->userid; ?>">
-				<?php echo $name->username; ?>
-				</a>
-			<?php else : ?>
-				<?php echo $name->username; ?>
-			<?php endif; ?>
+			<?php echo $name->username; ?>
 		</li>
 	<?php endforeach;  ?>
 	</ul>

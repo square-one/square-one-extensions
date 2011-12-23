@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `#__newsfeeds` (
+CREATE TABLE `#__newsfeeds` (
   `catid` integer NOT NULL default '0',
   `id` integer(10) UNSIGNED NOT NULL auto_increment,
   `name`  varchar(100) NOT NULL DEFAULT '',
@@ -37,3 +37,4 @@ CREATE TABLE IF NOT EXISTS `#__newsfeeds` (
   KEY `idx_xreference` (`xreference`)
 
 )  DEFAULT CHARSET=utf8;
+

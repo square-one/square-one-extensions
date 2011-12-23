@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: usermessages.php 20196 2011-01-09 02:40:25Z ian $
+ * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	com_messages
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -10,8 +10,6 @@
 defined('_JEXEC') or die;
 
 jimport('joomla.form.formfield');
-jimport('joomla.form.helper');
-jimport('joomla.access.access');
 JFormHelper::loadFieldClass('user');
 
 /**

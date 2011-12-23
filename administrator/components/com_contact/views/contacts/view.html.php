@@ -1,6 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
  * @version		$Id: view.html.php 21705 2011-06-28 21:19:50Z dextercowley $
+=======
+ * @version		$Id$
+>>>>>>> remotes/joomla/master
  * @package		Joomla.Administrator
  * @subpackage	com_contact
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -86,7 +90,11 @@ class ContactViewContacts extends JView
 			JToolBarHelper::deleteList('', 'contacts.delete', 'JTOOLBAR_EMPTY_TRASH');
 			JToolBarHelper::divider();
 		}
+<<<<<<< HEAD
 		else if ($canDo->get('core.edit.state')) {
+=======
+		elseif ($canDo->get('core.edit.state')) {
+>>>>>>> remotes/joomla/master
 			JToolBarHelper::trash('contacts.trash');
 			JToolBarHelper::divider();
 		}

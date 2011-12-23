@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: default_filter.php 21663 2011-06-23 13:51:35Z chdemko $
+ * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	Templates.hathor
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -38,4 +38,3 @@ defined('_JEXEC') or die;
 	</div>
 </fieldset>
 <div class="clr"></div>
-

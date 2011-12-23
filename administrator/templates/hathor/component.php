@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: component.php 21535 2011-06-14 08:48:24Z infograf768 $
+ * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	Templates.hathor
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.

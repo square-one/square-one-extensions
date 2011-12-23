@@ -1,6 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
  * @version		$Id: contact.php 21097 2011-04-07 15:38:03Z dextercowley $
+=======
+ * @version		$Id$
+>>>>>>> remotes/joomla/master
  * @package		Joomla.Administrator
  * @subpackage	com_contact
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -72,13 +76,21 @@ class ContactTableContact extends JTable
 		$user	= JFactory::getUser();
 		if ($this->id) {
 			// Existing item
+<<<<<<< HEAD
 			$this->modified		= $date->toMySQL();
+=======
+			$this->modified		= $date->toSql();
+>>>>>>> remotes/joomla/master
 			$this->modified_by	= $user->get('id');
 		} else {
 			// New newsfeed. A feed created and created_by field can be set by the user,
 			// so we don't touch either of these if they are set.
 			if (!intval($this->created)) {
+<<<<<<< HEAD
 				$this->created = $date->toMySQL();
+=======
+				$this->created = $date->toSql();
+>>>>>>> remotes/joomla/master
 			}
 			if (empty($this->created_by)) {
 				$this->created_by = $user->get('id');

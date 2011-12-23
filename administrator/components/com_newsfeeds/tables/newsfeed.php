@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: newsfeed.php 21097 2011-04-07 15:38:03Z dextercowley $
+ * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	com_newsfeeds
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -117,13 +117,13 @@ class NewsfeedsTableNewsfeed extends JTable
 		$user	= JFactory::getUser();
 		if ($this->id) {
 			// Existing item
-			$this->modified		= $date->toMySQL();
+			$this->modified		= $date->toSql();
 			$this->modified_by	= $user->get('id');
 		} else {
 			// New newsfeed. A feed created and created_by field can be set by the user,
 			// so we don't touch either of these if they are set.
 			if (!intval($this->created)) {
-				$this->created = $date->toMySQL();
+				$this->created = $date->toSql();
 			}
 			if (empty($this->created_by)) {
 				$this->created_by = $user->get('id');

@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: edit_metadata.php 21529 2011-06-11 22:17:15Z chdemko $
+ * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	com_newsfeeds
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.

@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		$Id: edit.php 21663 2011-06-23 13:51:35Z chdemko $
+ * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	com_banners
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
