@@ -13,15 +13,22 @@
 		<phing phingfile="build/com_wrapper.xml" />
 		
 		<!-- Modules -->
+		<phing phingfile="build/mod_articles_archive.xml" />
+		<phing phingfile="build/mod_articles_categories.xml" />
+		<phing phingfile="build/mod_articles_category.xml" />
+		<phing phingfile="build/mod_articles_latest.xml" />
+		<phing phingfile="build/mod_articles_news.xml" />
+		<phing phingfile="build/mod_articles_popular.xml" />
 		<phing phingfile="build/mod_banners.xml" />
 		<phing phingfile="build/mod_footer.xml" />
 		<phing phingfile="build/mod_random_image.xml" />
+		<phing phingfile="build/mod_related_items.xml" />
 		<phing phingfile="build/mod_search.xml" />
 		<phing phingfile="build/mod_stats.xml" />
 		<phing phingfile="build/mod_syndicate.xml" />
 		<phing phingfile="build/mod_users_latest.xml" />
 		<phing phingfile="build/mod_weblinks.xml" />
-		<phing phingfile="build/mod_whoisonline.xml" />
+		<phing phingfile="build/mod_whosonline.xml" />
 		<phing phingfile="build/mod_wrapper.xml" />
 		
 		<!-- Plugins -->
@@ -35,6 +42,10 @@
 		<phing phingfile="build/plg_content_vote.xml" />
 		<phing phingfile="build/plg_editors_codemirror.xml" />
 		<phing phingfile="build/plg_editors_tinymce.xml" />
+		<phing phingfile="build/plg_editors-xtd_article.xml" />
+		<phing phingfile="build/plg_editors-xtd_image.xml" />
+		<phing phingfile="build/plg_editors-xtd_pagebreak.xml" />
+		<phing phingfile="build/plg_editors-xtd_readmore.xml" />
 		<phing phingfile="build/plg_search_categories.xml" />
 		<phing phingfile="build/plg_search_contacts.xml" />
 		<phing phingfile="build/plg_search_content.xml" />
@@ -42,6 +53,7 @@
 		<phing phingfile="build/plg_search_weblinks.xml" />
 		<phing phingfile="build/plg_system_redirect.xml" />
 		<phing phingfile="build/plg_user_contactcreator.xml" />
+		<phing phingfile="build/plg_user_profile.xml" />
 		
 		<!-- Templates -->
 		<phing phingfile="build/tpl_atomic.xml" />
