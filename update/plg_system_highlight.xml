@@ -1,15 +1,15 @@
 <updates>
 	<update>
-		<name>TinyMCE Editor Plugin</name>
-		<description>TinyMCE Editor Plugin</description>
-		<element>plg_editors_tinymce</element>
-		<type>plugin</type>
-		<folder>editors</folder>
+		<name>Highlight System Plugin</name>
+		<description>Highlight System Plugin</description>
+		<element>plg_system_highlight</element>
+		<type>system</type>
+		<folder>authentication</folder>
 		<version>2.5.0</version>
 		<client_id>1</client_id>
 		<infourl title="Square One">http://www.squareonecms.org/</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">http://update.squareonecms.org/extensions/files/2.5/plg_editors_tinymce-2.5.0.zip</downloadurl>
+			<downloadurl type="full" format="zip">http://update.squareonecms.org/extensions/files/2.5/plg_system_highlight-2.5.0.zip</downloadurl>
 		</downloads>
         <tags>
             <tag>stable</tag>
