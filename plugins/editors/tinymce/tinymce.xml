@@ -8,6 +8,7 @@
 	<authorUrl>tinymce.moxiecode.com/</authorUrl>
 	<copyright>Moxiecode Systems AB</copyright>
 	<license>LGPL</license>
+	<version>2.5.0</version>
 	<description>PLG_TINY_XML_DESCRIPTION</description>
 	<files>
 		<filename plugin="tinymce">tinymce.php</filename>
