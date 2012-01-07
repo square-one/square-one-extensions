@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="search" default="build" basedir="../">
+	
+    <target name="build">
+        
+        <property name="package" value="com_${phing.project.name}" override="true" />
+		<xmlproperty file="administrator/components/${package}/${phing.project.name}.xml" />
+        <property name="version" value="${extension.version}" />
+        <property name="filename" value="${package}-${version}.zip" />
+        
+        <available file="${filename}" property="zip" value="yes" />
+        <if>
+            <equals arg1="${zip}" arg2="yes" />
+            <then>
+                <delete file="${filename}" />
+            </then>
+        </if>
+		
+		<mkdir dir=".tmp" />
+        
+        <copy todir=".tmp/admin">
+			<fileset dir="administrator/components/${package}" />
+		</copy>
+		<copy file="administrator/language/en-GB/en-GB.${package}.ini" tofile=".tmp/admin/language/en-GB/en-GB.${package}.ini" />
+        <copy file="administrator/language/en-GB/en-GB.${package}.sys.ini" tofile=".tmp/admin/language/en-GB/en-GB.${package}.sys.ini" />
+		
+		<copy todir=".tmp/site">
+			<fileset dir="components/${package}" />
+		</copy>
+		<copy file="language/en-GB/en-GB.${package}.ini" tofile=".tmp/site/language/en-GB/en-GB.${package}.ini" />
+		
+		<move file=".tmp/admin/${phing.project.name}.xml" tofile=".tmp/${phing.project.name}.xml" />
+        
+        <zip destfile="build/${filename}" basedir=".tmp" />
+        
+        <delete dir=".tmp" includeemptydirs="true" />
+	</target>
+
+</project>

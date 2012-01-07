@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="loadmodule" default="build" basedir="../">
+	
+    <target name="build">
+        
+		<property name="type" value="content" override="true" />
+		<property name="package" value="plg_${type}_${phing.project.name}" override="true" />
+        <xmlproperty file="plugins/${type}/${phing.project.name}/${phing.project.name}.xml" />
+        <property name="version" value="${extension.version}" />
+        <property name="filename" value="${package}-${version}.zip" />
+        
+        <available file="${filename}" property="zip" value="yes" />
+        <if>
+            <equals arg1="${zip}" arg2="yes" />
+            <then>
+                <delete file="${filename}" />
+            </then>
+        </if>
+		
+		<mkdir dir=".tmp" />
+        
+        <copy todir=".tmp">
+			<fileset dir="plugins/${type}/${phing.project.name}" />
+		</copy>
+		<copy file="administrator/language/en-GB/en-GB.${package}.ini" tofile=".tmp/language/en-GB/en-GB.${package}.ini" />
+		<copy file="administrator/language/en-GB/en-GB.${package}.sys.ini" tofile=".tmp/language/en-GB/en-GB.${package}.sys.ini" />
+		
+        <zip destfile="build/${filename}" basedir=".tmp" />
+        
+        <delete dir=".tmp" includeemptydirs="true" />
+	</target>
+
+</project>
