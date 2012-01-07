@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="square-one-extensions" default="build" basedir="../">
+	
+    <target name="build">
+		<!-- Components -->
+        <phing phingfile="build/com_banners.xml" />
+		<phing phingfile="build/com_contact.xml" />
+		<phing phingfile="build/com_messages.xml" />
+		<phing phingfile="build/com_newsfeeds.xml" />
+		<phing phingfile="build/com_redirect.xml" />
+		<phing phingfile="build/com_search.xml" />
+		<phing phingfile="build/com_weblinks.xml" />
+		<phing phingfile="build/com_wrapper.xml" />
+		
+		<!-- Modules -->
+		<phing phingfile="build/mod_banners.xml" />
+		<phing phingfile="build/mod_footer.xml" />
+		<phing phingfile="build/mod_random_image.xml" />
+		<phing phingfile="build/mod_search.xml" />
+		<phing phingfile="build/mod_stats.xml" />
+		<phing phingfile="build/mod_syndicate.xml" />
+		<phing phingfile="build/mod_users_latest.xml" />
+		<phing phingfile="build/mod_weblinks.xml" />
+		<phing phingfile="build/mod_whoisonline.xml" />
+		<phing phingfile="build/mod_wrapper.xml" />
+		
+		<!-- Plugins -->
+		<phing phingfile="build/plg_authentication_gmail.xml" />
+		<phing phingfile="build/plg_authentication_ldap.xml" />
+		<phing phingfile="build/plg_content_emailcloak.xml" />
+		<phing phingfile="build/plg_content_geshi.xml" />
+		<phing phingfile="build/plg_content_loadmodule.xml" />
+		<phing phingfile="build/plg_content_pagebreak.xml" />
+		<phing phingfile="build/plg_content_pagenavigation.xml" />
+		<phing phingfile="build/plg_content_vote.xml" />
+		<phing phingfile="build/plg_editors_codemirror.xml" />
+		<phing phingfile="build/plg_editors_tinymce.xml" />
+		<phing phingfile="build/plg_search_categories.xml" />
+		<phing phingfile="build/plg_search_contacts.xml" />
+		<phing phingfile="build/plg_search_content.xml" />
+		<phing phingfile="build/plg_search_newsfeeds.xml" />
+		<phing phingfile="build/plg_search_weblinks.xml" />
+		<phing phingfile="build/plg_system_redirect.xml" />
+		<phing phingfile="build/plg_user_contactcreator.xml" />
+		
+		<!-- Templates -->
+		<phing phingfile="build/tpl_atomic.xml" />
+		<phing phingfile="build/tpl_beez5.xml" />
+		<phing phingfile="build/tpl_beez_20.xml" />
+		<phing phingfile="build/tpl_hathor.xml" />
+	</target>
+
+</project>
