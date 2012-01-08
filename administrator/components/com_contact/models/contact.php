@@ -1,10 +1,6 @@
 <?php
 /**
-<<<<<<< HEAD
- * @version		$Id: contact.php 21593 2011-06-21 02:45:51Z dextercowley $
-=======
  * @version		$Id$
->>>>>>> remotes/joomla/master
  * @package		Joomla.Administrator
  * @subpackage	com_contact
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
@@ -351,10 +347,6 @@ class ContactModelContact extends JModelAdmin
 	 */
 	public function getForm($data = array(), $loadData = true)
 	{
-<<<<<<< HEAD
-		jimport('joomla.form.form');
-=======
->>>>>>> remotes/joomla/master
 		JForm::addFieldPath('JPATH_ADMINISTRATOR/components/com_users/models/fields');
 
 		// Get the form.
@@ -425,90 +417,6 @@ class ContactModelContact extends JModelAdmin
 	}
 
 	/**
-<<<<<<< HEAD
-	 * Method to perform batch operations on a category or a set of contacts.
-	 *
-	 * @param	array	$commands	An array of commands to perform.
-	 * @param	array	$pks		An array of category ids.
-	 *
-	 * @return	boolean	Returns true on success, false on failure.
-	 * @since	1.6
-	 */
-	function batch($commands, $pks)
-	{
-		// Sanitize user ids.
-		$pks = array_unique($pks);
-		JArrayHelper::toInteger($pks);
-
-		// Remove any values of zero.
-		if (array_search(0, $pks, true)) {
-			unset($pks[array_search(0, $pks, true)]);
-		}
-
-		if (empty($pks)) {
-			$this->setError(JText::_('COM_CONTACT_NO_ITEM_SELECTED'));
-			return false;
-		}
-
-		$done = false;
-
-		if (!empty($commands['assetgroup_id'])) {
-			if (!$this->_batchAccess($commands['assetgroup_id'], $pks)) {
-				return false;
-			}
-			$done = true;
-		}
-
-		if (!empty($commands['menu_id'])) {
-			$cmd = JArrayHelper::getValue($commands, 'move_copy', 'c');
-
-			if ($cmd == 'c' && !$this->_batchCopy($commands['menu_id'], $pks)) {
-				return false;
-			}
-			else if ($cmd == 'm' && !$this->_batchMove($commands['menu_id'], $pks)) {
-				return false;
-			}
-			$done = true;
-		}
-
-		if (!$done) {
-			$this->setError('COM_MENUS_ERROR_INSUFFICIENT_BATCH_INFORMATION');
-			return false;
-		}
-
-		return true;
-	}
-
-	/**
-	 * Batch access level changes for a group of rows.
-	 *
-	 * @param	int		$value	The new value matching an Asset Group ID.
-	 * @param	array	$pks	An array of row IDs.
-	 *
-	 * @return	booelan	True if successful, false otherwise and internal error is set.
-	 * @since	1.6
-	 */
-	protected function _batchAccess($value, $pks)
-	{
-		$table = $this->getTable();
-		foreach ($pks as $pk)
-		{
-			$table->reset();
-			$table->load($pk);
-			$table->access = (int) $value;
-
-			if (!$table->store()) {
-				$this->setError($table->getError());
-				return false;
-			}
-		}
-
-		return true;
-	}
-
-	/**
-=======
->>>>>>> remotes/joomla/master
 	 * Prepare and sanitise the table prior to saving.
 	 *
 	 * @param	JTable	$table
@@ -530,11 +438,7 @@ class ContactModelContact extends JModelAdmin
 
 		if (empty($table->id)) {
 			// Set the values
-<<<<<<< HEAD
-			//$table->created	= $date->toMySQL();
-=======
 			//$table->created	= $date->toSql();
->>>>>>> remotes/joomla/master
 
 			// Set ordering to the last item if not set
 			if (empty($table->ordering)) {
@@ -547,11 +451,7 @@ class ContactModelContact extends JModelAdmin
 		}
 		else {
 			// Set the values
-<<<<<<< HEAD
-			//$table->modified	= $date->toMySQL();
-=======
 			//$table->modified	= $date->toSql();
->>>>>>> remotes/joomla/master
 			//$table->modified_by	= $user->get('id');
 		}
 	}
@@ -599,15 +499,9 @@ class ContactModelContact extends JModelAdmin
 			$db = $this->getDbo();
 
 			$db->setQuery(
-<<<<<<< HEAD
-				'UPDATE #__contact_details AS a' .
-				' SET a.featured = '.(int) $value.
-				' WHERE a.id IN ('.implode(',', $pks).')'
-=======
 				'UPDATE #__contact_details' .
 				' SET featured = '.(int) $value.
 				' WHERE id IN ('.implode(',', $pks).')'
->>>>>>> remotes/joomla/master
 			);
 			if (!$db->query()) {
 				throw new Exception($db->getErrorMsg());
@@ -627,8 +521,4 @@ class ContactModelContact extends JModelAdmin
 
 		return true;
 	}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> remotes/joomla/master

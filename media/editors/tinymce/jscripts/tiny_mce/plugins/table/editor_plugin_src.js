@@ -988,11 +988,7 @@
 						rng.endOffset == 0 && 
 						currentCell && 
 						(n.nodeName=="TR" || n==tableParent);
-<<<<<<< HEAD
-					tableCellSelection = (n.nodeName=="TD"||n.nodeName=="TH")&& !currentCell;       
-=======
 					tableCellSelection = (n.nodeName=="TD"||n.nodeName=="TH")&& !currentCell;	   
->>>>>>> remotes/joomla/master
 					return  allOfCellSelected || tableCellSelection;
 					// return false;
 				}
@@ -1004,11 +1000,7 @@
 
 					var rng = ed.selection.getRng();
 					var n = ed.selection.getNode();
-<<<<<<< HEAD
-					var currentCell = ed.dom.getParent(rng.startContainer, 'TD');
-=======
 					var currentCell = ed.dom.getParent(rng.startContainer, 'TD,TH');
->>>>>>> remotes/joomla/master
 				
 					if (!tableCellSelected(ed, rng, n, currentCell))
 						return;
@@ -1020,11 +1012,7 @@
 					var end = currentCell.lastChild;
 					while (end.lastChild)
 						end = end.lastChild;
-<<<<<<< HEAD
-                    
-=======
 					
->>>>>>> remotes/joomla/master
 					// Select the entire table cell. Nothing outside of the table cell should be selected.
 					rng.setEnd(end, end.nodeValue.length);
 					ed.selection.setRng(rng);
@@ -1086,33 +1074,6 @@
 				// Fix to allow navigating up and down in a table in WebKit browsers.
 				if (tinymce.isWebKit) {
 					function moveSelection(ed, e) {
-<<<<<<< HEAD
-
-						function moveCursorToStartOfElement(n) {
-							ed.selection.setCursorLocation(n, 0);
-						}
-
-						function getSibling(event, element) {
-							return event.keyCode == UP_ARROW ? element.previousSibling : element.nextSibling;
-						}
-
-						function getNextRow(e, row) {
-							var sibling = getSibling(e, row);
-							return sibling !== null && sibling.tagName === 'TR' ? sibling : null;
-						}
-
-						function getTable(ed, currentRow) {
-							return ed.dom.getParent(currentRow, 'table');
-						}
-
-						function getTableSibling(currentRow) {
-							var table = getTable(ed, currentRow);
-							return getSibling(e, table);
-						}
-
-						function isVerticalMovement(event) {
-							return event.keyCode == UP_ARROW || event.keyCode == DOWN_ARROW;
-=======
 						var VK = tinymce.VK;
 						var key = e.keyCode;
 
@@ -1192,7 +1153,6 @@
 
 						function isVerticalMovement() {
 							return key == VK.UP || key == VK.DOWN;
->>>>>>> remotes/joomla/master
 						}
 
 						function isInTable(ed) {
@@ -1223,44 +1183,6 @@
 							return r;
 						}
 
-<<<<<<< HEAD
-						function moveCursorToRow(ed, node, row) {
-							var srcColumnIndex = columnIndex(ed.dom.getParent(node, 'td'));
-							var tgtColumnIndex = findColumn(row, srcColumnIndex)
-							var tgtNode = row.childNodes[tgtColumnIndex];
-							moveCursorToStartOfElement(tgtNode);
-						}
-
-						function escapeTable(currentRow, e) {
-							var tableSiblingElement = getTableSibling(currentRow);
-							if (tableSiblingElement !== null) {
-								moveCursorToStartOfElement(tableSiblingElement);
-								return tinymce.dom.Event.cancel(e);
-							} else {
-								var element = e.keyCode == UP_ARROW ? currentRow.firstChild : currentRow.lastChild;
-								// rely on default behaviour to escape table after we are in the last cell of the last row
-								moveCursorToStartOfElement(element);
-								return true;
-							}
-						}
-
-						var UP_ARROW = 38;
-						var DOWN_ARROW = 40;
-
-						if (isVerticalMovement(e) && isInTable(ed)) {
-							var node = ed.selection.getNode();
-							var currentRow = ed.dom.getParent(node, 'tr');
-							var nextRow = getNextRow(e, currentRow);
-
-							// If we're at the first or last row in the table, we should move the caret outside of the table
-							if (nextRow == null) {
-								return escapeTable(currentRow, e);
-							} else {
-								moveCursorToRow(ed, node, nextRow);
-								tinymce.dom.Event.cancel(e);
-								return true;
-							}
-=======
 						function moveCursorToRow(ed, node, row, upBool) {
 							var srcColumnIndex = columnIndex(ed.dom.getParent(node, 'td,th'));
 							var tgtColumnIndex = findColumn(row, srcColumnIndex);
@@ -1287,7 +1209,6 @@
 									handle(!e.shiftKey && key === VK.UP, preBrowserNode, e);
 								}
 							}, 0);
->>>>>>> remotes/joomla/master
 						}
 					}
 
@@ -1347,10 +1268,7 @@
 					});
 
 					fixTableCaretPos();
-<<<<<<< HEAD
-=======
 					ed.startContent = ed.getContent({format : 'raw'});
->>>>>>> remotes/joomla/master
 				}
 			});
 
@@ -1487,8 +1405,4 @@
 
 	// Register plugin
 	tinymce.PluginManager.add('table', tinymce.plugins.TablePlugin);
-<<<<<<< HEAD
 })(tinymce);
-=======
-})(tinymce);
->>>>>>> remotes/joomla/master

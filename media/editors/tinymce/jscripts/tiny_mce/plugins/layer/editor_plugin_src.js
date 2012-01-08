@@ -9,8 +9,6 @@
  */
 
 (function() {
-<<<<<<< HEAD
-=======
 	function findParentLayer(node) {
 		do {
 			if (node.className && node.className.indexOf('mceItemLayer') != -1) {
@@ -19,7 +17,6 @@
 		} while (node = node.parentNode);
 	};
 
->>>>>>> remotes/joomla/master
 	tinymce.create('tinymce.plugins.Layer', {
 		init : function(ed, url) {
 			var t = this;
@@ -48,17 +45,12 @@
 			ed.addButton('insertlayer', {title : 'layer.insertlayer_desc', cmd : 'mceInsertLayer'});
 
 			ed.onInit.add(function() {
-<<<<<<< HEAD
-=======
 				var dom = ed.dom;
 
->>>>>>> remotes/joomla/master
 				if (tinymce.isIE)
 					ed.getDoc().execCommand('2D-Position', false, true);
 			});
 
-<<<<<<< HEAD
-=======
 			// Remove serialized styles when selecting a layer since it might be changed by a drag operation
 			ed.onMouseUp.add(function(ed, e) {
 				var layer = findParentLayer(e.target);
@@ -90,7 +82,6 @@
 				}
 			});
 
->>>>>>> remotes/joomla/master
 			ed.onNodeChange.add(t._nodeChange, t);
 			ed.onVisualAid.add(t._visualAid, t);
 		},
@@ -131,13 +122,6 @@
 			var dom = ed.dom;
 
 			tinymce.each(dom.select('div,p', e), function(e) {
-<<<<<<< HEAD
-				if (/^(absolute|relative|static)$/i.test(e.style.position)) {
-					if (s)
-						dom.addClass(e, 'mceItemVisualAid');
-					else
-						dom.removeClass(e, 'mceItemVisualAid');	
-=======
 				if (/^(absolute|relative|fixed)$/i.test(e.style.position)) {
 					if (s)
 						dom.addClass(e, 'mceItemVisualAid');
@@ -145,7 +129,6 @@
 						dom.removeClass(e, 'mceItemVisualAid');
 
 					dom.addClass(e, 'mceItemLayer');
->>>>>>> remotes/joomla/master
 				}
 			});
 		},
@@ -213,15 +196,9 @@
 		},
 
 		_insertLayer : function() {
-<<<<<<< HEAD
-			var ed = this.editor, p = ed.dom.getPos(ed.dom.getParent(ed.selection.getNode(), '*'));
-
-			ed.dom.add(ed.getBody(), 'div', {
-=======
 			var ed = this.editor, dom = ed.dom, p = dom.getPos(dom.getParent(ed.selection.getNode(), '*')), body = ed.getBody();
 
 			ed.dom.add(body, 'div', {
->>>>>>> remotes/joomla/master
 				style : {
 					position : 'absolute',
 					left : p.x,
@@ -229,17 +206,12 @@
 					width : 100,
 					height : 100
 				},
-<<<<<<< HEAD
-				'class' : 'mceItemVisualAid'
-			}, ed.selection.getContent() || ed.getLang('layer.content'));
-=======
 				'class' : 'mceItemVisualAid mceItemLayer'
 			}, ed.selection.getContent() || ed.getLang('layer.content'));
 
 			// Workaround for IE where it messes up the JS engine if you insert a layer on IE 6,7
 			if (tinymce.isIE)
 				dom.setHTML(body, body.innerHTML);
->>>>>>> remotes/joomla/master
 		},
 
 		_toggleAbsolute : function() {
@@ -259,10 +231,7 @@
 					});
 
 					ed.dom.removeClass(le, 'mceItemVisualAid');
-<<<<<<< HEAD
-=======
 					ed.dom.removeClass(le, 'mceItemLayer');
->>>>>>> remotes/joomla/master
 				} else {
 					if (le.style.left == "")
 						le.style.left = 20 + 'px';

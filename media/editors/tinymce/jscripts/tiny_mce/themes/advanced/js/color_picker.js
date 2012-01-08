@@ -1,10 +1,6 @@
 tinyMCEPopup.requireLangPack();
 
-<<<<<<< HEAD
-var detail = 50, strhex = "0123456789ABCDEF", i, isMouseDown = false, isMouseOver = false;
-=======
 var detail = 50, strhex = "0123456789abcdef", i, isMouseDown = false, isMouseOver = false;
->>>>>>> remotes/joomla/master
 
 var colors = [
 	"#000000","#000033","#000066","#000099","#0000cc","#0000ff","#330000","#330033",
@@ -270,17 +266,10 @@ function dechex(n) {
 }
 
 function computeColor(e) {
-<<<<<<< HEAD
-	var x, y, partWidth, partDetail, imHeight, r, g, b, coef, i, finalCoef, finalR, finalG, finalB;
-
-	x = e.offsetX ? e.offsetX : (e.target ? e.clientX - e.target.x : 0);
-	y = e.offsetY ? e.offsetY : (e.target ? e.clientY - e.target.y : 0);
-=======
 	var x, y, partWidth, partDetail, imHeight, r, g, b, coef, i, finalCoef, finalR, finalG, finalB, pos = tinyMCEPopup.dom.getPos(e.target);
 
 	x = e.offsetX ? e.offsetX : (e.target ? e.clientX - pos.x : 0);
 	y = e.offsetY ? e.offsetY : (e.target ? e.clientY - pos.y : 0);
->>>>>>> remotes/joomla/master
 
 	partWidth = document.getElementById('colors').width / 6;
 	partDetail = detail / 2;

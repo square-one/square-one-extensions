@@ -16,11 +16,7 @@ var TinyMCE_EditableSelects = {
 
 		for (i=0; i<nl.length; i++) {
 			if (nl[i].className.indexOf('mceEditableSelect') != -1) {
-<<<<<<< HEAD
-				o = new Option('(value)', '__mce_add_custom__');
-=======
 				o = new Option(tinyMCEPopup.editor.translate('value'), '__mce_add_custom__');
->>>>>>> remotes/joomla/master
 
 				o.className = 'mceAddSelectValue';
 

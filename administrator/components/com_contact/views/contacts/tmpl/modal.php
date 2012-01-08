@@ -1,10 +1,6 @@
 <?php
 /**
-<<<<<<< HEAD
- * @version		$Id: modal.php 21837 2011-07-12 18:12:35Z dextercowley $
-=======
  * @version		$Id$
->>>>>>> remotes/joomla/master
  * @package		Joomla.Administrator
  * @subpackage	com_contact
  * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.

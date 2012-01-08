@@ -27,11 +27,7 @@
 					else {
 						DOM.win.setTimeout(function() {
 							tinymce.dom.Event.remove(DOM.win, 'resize', t.resizeFunc);
-<<<<<<< HEAD
-							tinyMCE.get(ed.getParam('fullscreen_editor_id')).setContent(ed.getContent({format : 'raw'}), {format : 'raw'});
-=======
 							tinyMCE.get(ed.getParam('fullscreen_editor_id')).setContent(ed.getContent());
->>>>>>> remotes/joomla/master
 							tinyMCE.remove(ed);
 							DOM.remove('mce_fullscreen_container');
 							de.style.overflow = ed.getParam('fullscreen_html_overflow');
@@ -104,11 +100,7 @@
 					s.fullscreen_editor_id = ed.id;
 					s.theme_advanced_resizing = false;
 					s.save_onsavecallback = function() {
-<<<<<<< HEAD
-						ed.setContent(tinyMCE.get(s.id).getContent({format : 'raw'}), {format : 'raw'});
-=======
 						ed.setContent(tinyMCE.get(s.id).getContent());
->>>>>>> remotes/joomla/master
 						ed.execCommand('mceSave');
 					};
 

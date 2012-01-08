@@ -1,10 +1,6 @@
 tinyMCEPopup.requireLangPack();
 
 var EmotionsDialog = {
-<<<<<<< HEAD
-	init : function(ed) {
-		tinyMCEPopup.resizeToInnerSize();
-=======
 	addKeyboardNavigation: function(){
 		var tableElm, cells, settings;
 			
@@ -28,7 +24,6 @@ var EmotionsDialog = {
 	init : function(ed) {
 		tinyMCEPopup.resizeToInnerSize();
 		this.addKeyboardNavigation();
->>>>>>> remotes/joomla/master
 	},
 
 	insert : function(file, title) {

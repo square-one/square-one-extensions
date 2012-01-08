@@ -24,10 +24,7 @@
 		["Silverlight", "dfeaf541-f3e1-4c24-acac-99c30715084a", "application/x-silverlight-2"],
 		["Iframe"],
 		["Video"],
-<<<<<<< HEAD
-=======
 		["EmbeddedAudio"],
->>>>>>> remotes/joomla/master
 		["Audio"]
 	];
 
@@ -254,11 +251,8 @@
 				id : data.id,
 				style : data.style,
 				align : data.align,
-<<<<<<< HEAD
-=======
 				hspace : data.hspace,
 				vspace : data.vspace,
->>>>>>> remotes/joomla/master
 				src : self.editor.theme.url + '/img/trans.gif',
 				'class' : 'mceItemMedia mceItem' + self.getType(data.type).name,
 				'data-mce-json' : JSON.serialize(data, "'")
@@ -503,8 +497,6 @@
 				data.params.src = '';
 			}
 
-<<<<<<< HEAD
-=======
 			if (typeItem.name === 'EmbeddedAudio') {
 				embed = new Node('embed', 1);
 				embed.shortEnded = true;
@@ -527,7 +519,6 @@
 				data.params.src = '';
 			}
 
->>>>>>> remotes/joomla/master
 			// Do we have a params src then we can generate object
 			if (data.params.src) {
 				// Is flv movie add player for it
@@ -546,10 +537,6 @@
 				});
 
 				tinymce.each(rootAttributes, function(name) {
-<<<<<<< HEAD
-					if (data[name] && name != 'type')
-						object.attr(name, data[name]);
-=======
 					var value = data[name];
 
 					if (name == 'class' && value)
@@ -557,7 +544,6 @@
 
 					if (value && name != 'type')
 						object.attr(name, value);
->>>>>>> remotes/joomla/master
 				});
 
 				// Add params
@@ -640,14 +626,9 @@
 				}
 			}
 
-<<<<<<< HEAD
-			if (video || audio || object)
-				node.replace(video || audio || object);
-=======
 			var n = video || audio || object || embed;
 			if (n)
 				node.replace(n);
->>>>>>> remotes/joomla/master
 			else
 				node.remove();
 		},
@@ -665,12 +646,8 @@
 			var object, embed, video, iframe, img, name, id, width, height, style, i, html,
 				param, params, source, sources, data, type, lookup = this.lookup,
 				matches, attrs, urlConverter = this.editor.settings.url_converter,
-<<<<<<< HEAD
-				urlConverterScope = this.editor.settings.url_converter_scope;
-=======
 				urlConverterScope = this.editor.settings.url_converter_scope,
 				hspace, vspace, align, bgcolor;
->>>>>>> remotes/joomla/master
 
 			function getInnerHTML(node) {
 				return new tinymce.html.Serializer({
@@ -679,8 +656,6 @@
 				}).serialize(node);
 			};
 
-<<<<<<< HEAD
-=======
 			function lookupAttribute(o, attr) {
 				return lookup[(o.attr(attr) || '').toLowerCase()];
 			}
@@ -690,7 +665,6 @@
 				return lookup[ext.toLowerCase() || ''];
 			}
 
->>>>>>> remotes/joomla/master
 			// If node isn't in document
 			if (!node.parent)
 				return;
@@ -780,14 +754,11 @@
 				height = height || object.attr('height');
 				style = style || object.attr('style');
 				id = id || object.attr('id');
-<<<<<<< HEAD
-=======
 				hspace = hspace || object.attr('hspace');
 				vspace = vspace || object.attr('vspace');
 				align = align || object.attr('align');
 				bgcolor = bgcolor || object.attr('bgcolor');
 				data.name = object.attr('name');
->>>>>>> remotes/joomla/master
 
 				// Get all object params
 				params = object.getAll("param");
@@ -808,13 +779,10 @@
 				height = height || embed.attr('height');
 				style = style || embed.attr('style');
 				id = id || embed.attr('id');
-<<<<<<< HEAD
-=======
 				hspace = hspace || embed.attr('hspace');
 				vspace = vspace || embed.attr('vspace');
 				align = align || embed.attr('align');
 				bgcolor = bgcolor || embed.attr('bgcolor');
->>>>>>> remotes/joomla/master
 
 				// Get all embed attributes
 				for (name in embed.attributes.map) {
@@ -829,13 +797,10 @@
 				height = iframe.attr('height');
 				style = style || iframe.attr('style');
 				id = iframe.attr('id');
-<<<<<<< HEAD
-=======
 				hspace = iframe.attr('hspace');
 				vspace = iframe.attr('vspace');
 				align = iframe.attr('align');
 				bgcolor = iframe.attr('bgcolor');
->>>>>>> remotes/joomla/master
 
 				tinymce.each(rootAttributes, function(name) {
 					img.attr(name, iframe.attr(name));
@@ -866,12 +831,6 @@
 			}
 
 			if (object && !type)
-<<<<<<< HEAD
-				type = (lookup[(object.attr('clsid') || '').toLowerCase()] || lookup[(object.attr('type') || '').toLowerCase()] || {}).name;
-
-			if (embed && !type)
-				type = (lookup[(embed.attr('type') || '').toLowerCase()] || {}).name;
-=======
 				type = (lookupAttribute(object, 'clsid') || lookupAttribute(object, 'classid') || lookupAttribute(object, 'type') || {}).name;
 
 			if (embed && !type)
@@ -881,7 +840,6 @@
 			if (embed && type == 'EmbeddedAudio') {
 				data.params.type = embed.attr('type');
 			}
->>>>>>> remotes/joomla/master
 
 			// Replace the video/object/embed element with a placeholder image containing the data
 			node.replace(img);
@@ -906,14 +864,11 @@
 					data.video_html = html;
 			}
 
-<<<<<<< HEAD
-=======
 			data.hspace = hspace;
 			data.vspace = vspace;
 			data.align = align;
 			data.bgcolor = bgcolor;
 
->>>>>>> remotes/joomla/master
 			// Set width/height of placeholder
 			img.attr({
 				id : id,
@@ -921,13 +876,10 @@
 				style : style,
 				width : width || (node.name == 'audio' ? "300" : "320"),
 				height : height || (node.name == 'audio' ? "32" : "240"),
-<<<<<<< HEAD
-=======
 				hspace : hspace,
 				vspace : vspace,
 				align : align,
 				bgcolor : bgcolor,
->>>>>>> remotes/joomla/master
 				"data-mce-json" : JSON.serialize(data, "'")
 			});
 		}
@@ -935,8 +887,4 @@
 
 	// Register plugin
 	tinymce.PluginManager.add('media', tinymce.plugins.MediaPlugin);
-<<<<<<< HEAD
 })();
-=======
-})();
->>>>>>> remotes/joomla/master

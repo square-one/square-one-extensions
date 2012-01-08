@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-CREATE TABLE IF NOT EXISTS `#__contact_details` (
-=======
 CREATE TABLE `#__contact_details` (
->>>>>>> remotes/joomla/master
   `id` integer NOT NULL auto_increment,
   `name` varchar(255) NOT NULL default '',
   `alias` varchar(255) NOT NULL default '',
@@ -54,9 +50,4 @@ CREATE TABLE `#__contact_details` (
   KEY `idx_featured_catid` (`featured`,`catid`),
   KEY `idx_language` (`language`),
   KEY `idx_xreference` (`xreference`)
-<<<<<<< HEAD
 )  DEFAULT CHARSET=utf8;
-=======
-)  DEFAULT CHARSET=utf8;
-
->>>>>>> remotes/joomla/master

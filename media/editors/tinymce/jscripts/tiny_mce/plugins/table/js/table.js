@@ -60,9 +60,6 @@ function insertTable() {
 	if (action == "update") {
 		dom.setAttrib(elm, 'cellPadding', cellpadding, true);
 		dom.setAttrib(elm, 'cellSpacing', cellspacing, true);
-<<<<<<< HEAD
-		dom.setAttrib(elm, 'border', border);
-=======
 
 		if (!isCssSize(border)) {
 			dom.setAttrib(elm, 'border', border);
@@ -76,7 +73,6 @@ function insertTable() {
 			dom.setAttrib(elm, 'border', '');
 		}
 
->>>>>>> remotes/joomla/master
 		dom.setAttrib(elm, 'align', align);
 		dom.setAttrib(elm, 'frame', frame);
 		dom.setAttrib(elm, 'rules', rules);
@@ -135,11 +131,7 @@ function insertTable() {
 		if (bordercolor != "") {
 			elm.style.borderColor = bordercolor;
 			elm.style.borderStyle = elm.style.borderStyle == "" ? "solid" : elm.style.borderStyle;
-<<<<<<< HEAD
-			elm.style.borderWidth = border == "" ? "1px" : border;
-=======
 			elm.style.borderWidth = cssSize(border);
->>>>>>> remotes/joomla/master
 		} else
 			elm.style.borderColor = '';
 
@@ -166,14 +158,10 @@ function insertTable() {
 	html += '<table';
 
 	html += makeAttrib('id', id);
-<<<<<<< HEAD
-	html += makeAttrib('border', border);
-=======
 	if (!isCssSize(border)) {
 		html += makeAttrib('border', border);
 	}
 
->>>>>>> remotes/joomla/master
 	html += makeAttrib('cellpadding', cellpadding);
 	html += makeAttrib('cellspacing', cellspacing);
 	html += makeAttrib('data-mce-new', '1');
@@ -255,20 +243,11 @@ function insertTable() {
 		inst.execCommand('mceInsertContent', false, html);
 
 	tinymce.each(dom.select('table[data-mce-new]'), function(node) {
-<<<<<<< HEAD
-		var td = dom.select('td', node);
-
-		try {
-			// IE9 might fail to do this selection
-			inst.selection.select(td[0], true);
-			inst.selection.collapse();
-=======
 		var tdorth = dom.select('td,th', node);
 
 		try {
 			// IE9 might fail to do this selection 
 			inst.selection.setCursorLocation(tdorth[0], 0);
->>>>>>> remotes/joomla/master
 		} catch (ex) {
 			// Ignore
 		}
@@ -419,8 +398,6 @@ function changedSize() {
 	formObj.style.value = dom.serializeStyle(st);
 }
 
-<<<<<<< HEAD
-=======
 function isCssSize(value) {
 	return /^[0-9.]+(%|in|cm|mm|em|ex|pt|pc|px)$/.test(value);
 }
@@ -435,7 +412,6 @@ function cssSize(value, def) {
 	return value;
 }
 
->>>>>>> remotes/joomla/master
 function changedBackgroundImage() {
 	var formObj = document.forms[0];
 	var st = dom.parseStyle(formObj.style.value);
@@ -450,10 +426,6 @@ function changedBorder() {
 	var st = dom.parseStyle(formObj.style.value);
 
 	// Update border width if the element has a color
-<<<<<<< HEAD
-	if (formObj.border.value != "" && formObj.bordercolor.value != "")
-		st['border-width'] = formObj.border.value + "px";
-=======
 	if (formObj.border.value != "" && (isCssSize(formObj.border.value) || formObj.bordercolor.value != ""))
 		st['border-width'] = cssSize(formObj.border.value);
 	else {
@@ -462,7 +434,6 @@ function changedBorder() {
 			st['border-width'] = '';
 		}
 	}
->>>>>>> remotes/joomla/master
 
 	formObj.style.value = dom.serializeStyle(st);
 }
@@ -478,11 +449,7 @@ function changedColor() {
 
 		// Add border-width if it's missing
 		if (!st['border-width'])
-<<<<<<< HEAD
-			st['border-width'] = formObj.border.value == "" ? "1px" : formObj.border.value + "px";
-=======
 			st['border-width'] = cssSize(formObj.border.value, 1);
->>>>>>> remotes/joomla/master
 	}
 
 	formObj.style.value = dom.serializeStyle(st);
