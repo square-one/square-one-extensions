@@ -51,6 +51,7 @@
 		<phing phingfile="build/plg_search_content.xml" />
 		<phing phingfile="build/plg_search_newsfeeds.xml" />
 		<phing phingfile="build/plg_search_weblinks.xml" />
+		<phing phingfile="build/plg_system_highlight.xml" />
 		<phing phingfile="build/plg_system_redirect.xml" />
 		<phing phingfile="build/plg_user_contactcreator.xml" />
 		<phing phingfile="build/plg_user_profile.xml" />

@@ -31,9 +31,8 @@
 		<folder>models</folder>
 		<folder>views</folder>
 	</files>
-	<languages folder="site">
-		<language tag="en-GB">language/en-GB.com_search.ini
-		</language>
+	<languages folder="site/language">
+		<language tag="en-GB">en-GB/en-GB.com_search.ini</language>
 	</languages>
 	<administration>
 		<menu link="option=com_search" img="class:search">Search</menu>
@@ -45,13 +44,12 @@
 			<folder>controllers</folder>
 			<folder>helpers</folder>
 			<folder>models</folder>
+			<folder>sql</folder>
 			<folder>views</folder>
 		</files>
-		<languages folder="admin">
-			<language tag="en-GB">language/en-GB.com_search.ini
-			</language>
-			<language tag="en-GB">language/en-GB.com_search.sys.ini
-			</language>
+		<languages folder="admin/language">
+			<language tag="en-GB">en-GB/en-GB.com_search.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_search.sys.ini</language>
 		</languages>
 	</administration>
 </extension>
