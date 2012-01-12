@@ -88,7 +88,7 @@ Joomla.submitbutton = function(pressbutton) {
 				</td>
 				<td>
 					<?php
-						$key = 'COM_FINDER_TYPE_S_' . strtoupper(str_replace(' ', '_', $item->title));
+						$key = FinderHelperLanguage::branchSingular($item->title);
 						$title = $lang->hasKey($key) ? JText::_($key) : $item->title;
 					?>
 					<?php if ($this->state->get('filter.branch') == 1 && $item->num_children) : ?>
@@ -101,6 +101,9 @@ Joomla.submitbutton = function(pressbutton) {
 						<small>(<?php echo $item->num_children; ?>)</small>
 					<?php elseif ($item->num_nodes > 0) : ?>
 						<small>(<?php echo $item->num_nodes; ?>)</small>
+					<?php endif; ?>
+					<?php if ($this->escape(trim($title, '**')) == 'Language' && FinderHelperLanguage::isMultiLanguage()) : ?>
+						<strong><?php echo JText::_('COM_FINDER_MAPS_MULTILANG'); ?></strong>
 					<?php endif; ?>
 				</td>
 				<td class="center nowrap">
