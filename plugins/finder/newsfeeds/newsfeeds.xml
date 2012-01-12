@@ -14,8 +14,8 @@
 		<file plugin="newsfeeds">newsfeeds.php</file>
     	<filename>index.html</filename>
 	</files>
-	<languages>
-		<language tag="en-GB">language/en-GB/en-GB.plg_finder_newsfeeds.ini</language>
-		<language tag="en-GB">language/en-GB/en-GB.plg_finder_newsfeeds.sys.ini</language>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_finder_newsfeeds.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_finder_newsfeeds.sys.ini</language>
 	</languages>
 </extension>

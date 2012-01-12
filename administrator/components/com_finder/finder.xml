@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="component" version="1.7" method="upgrade">
+<extension type="component" version="2.5" method="upgrade">
 	<name>com_finder</name>
 	<author>Joomla! Project</author>
 	<copyright>(C) 2005 - 2011 Open Source Matters. All rights reserved.</copyright>
@@ -20,7 +20,7 @@
 		<folder>models</folder>
 		<folder>views</folder>
 	</files>
-	<media destination="com_finder" folder="media">
+	<media destination="com_finder" folder="media/com_finder">
 		<folder>js</folder>
 		<folder>images</folder>
 		<folder>css</folder>
