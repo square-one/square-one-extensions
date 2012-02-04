@@ -1,10 +1,9 @@
 @charset "UTF-8";
 
 /**
- * @version		$Id: color_standard.css 19677 2010-11-29 17:01:13Z infograf768 $
  * @package		Joomla.Administrator
  * @subpackage	templates.hathor
- * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  * @since		1.6
  *
@@ -336,7 +335,7 @@ div.current fieldset.adminform {
 /**
  * Cpanel Settings
  */
-#cpanel div.icon a {
+#cpanel div.icon a, .cpanel div.icon a {
 	color: #2c2c2c;
 	border-left: 1px solid #e3e4ca;
 	border-top: 1px solid #e3e4ca;
@@ -346,7 +345,9 @@ div.current fieldset.adminform {
 }
 
 #cpanel div.icon a:hover,
-#cpanel div.icon a:focus {
+#cpanel div.icon a:focus,
+.cpanel div.icon a:hover,
+.cpanel div.icon a:focus {
 	border-left: 1px solid #868778;
 	border-top: 1px solid #868778;
 	border-right: 1px solid #f6f7db;
@@ -1934,3 +1935,16 @@ ul.alternating > li:nth-child(odd) { background-color: #f9fade; }
 ul.alternating > li:nth-child(even) { background-color: #ffffff; }
 ol.alternating > li:nth-child(odd) { background-color: #f9fade; }
 ol.alternating > li:nth-child(even) { background-color: #ffffff; }
+
+/* Installer Database */
+#installer-database {
+	border-top: 1px solid #c7c8b2;
+}
+
+#installer-database p.warning {
+	background: transparent url(../images/admin/icon-16-deny.png) center left no-repeat;
+}
+
+#installer-database p.nowarning {
+	background: transparent url(../images/admin/icon-16-allow.png) center left no-repeat;
+}

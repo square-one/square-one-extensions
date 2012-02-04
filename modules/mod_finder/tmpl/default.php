@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  mod_finder
  *
- * @copyright   Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -15,15 +15,6 @@ JHtml::addIncludePath(JPATH_SITE . '/components/com_finder/helpers/html');
 // Load the smart search component language file.
 $lang = JFactory::getLanguage();
 $lang->load('com_finder', JPATH_SITE);
-
-if (!defined('FINDER_PATH_INDEXER'))
-{
-	define('FINDER_PATH_INDEXER', JPATH_ADMINISTRATOR . '/components/com_finder/helpers/indexer');
-}
-JLoader::register('FinderIndexerQuery', FINDER_PATH_INDEXER . '/query.php');
-
-// Instantiate a query object.
-$query = new FinderIndexerQuery(array('filter' => $params->get('f')));
 
 $suffix = $params->get('moduleclass_sfx');
 $output = '<input type="text" name="q" id="mod-finder-searchword" class="inputbox" size="' . $params->get('field_size', 20) . '" value="' . htmlspecialchars(JFactory::getApplication()->input->get('q', '', 'string')) . '" />';

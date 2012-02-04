@@ -1,10 +1,9 @@
 @charset "UTF-8";
 
 /**
- * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	templates.hathor
- * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  * @since		1.6
  *
@@ -56,7 +55,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	margin: 5px 20px 20px 20px;
 }
 
-#element-box.cpanel {
+.cpanel-page div#element-box {
 	padding: 15px;
 }
 
@@ -317,15 +316,18 @@ p.tab-description {
 /**
  * Cpanel Settings
  */
+.cpanel div.icon ,
 #cpanel div.icon {
 	margin-left: 5px;
 	float: right;
 }
 
+.cpanel div.icon a ,
 #cpanel div.icon a {
 	float: right;
 }
 
+.cpanel img ,
 #cpanel img {
 	padding: 10px 0;
 	margin: 0 auto;
@@ -1189,4 +1191,15 @@ ul.helpmenu li {
 	-webkit-border-top-right-radius: 3px;
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
+}
+
+/* Installer Database */
+#installer-database p.warning {
+	padding-left: 0;
+	padding-right: 20px
+}
+
+#installer-database p.nowarning {
+	padding-left: 0;
+	padding-right: 20px
 }

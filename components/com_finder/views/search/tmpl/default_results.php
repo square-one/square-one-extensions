@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  com_finder
  *
- * @copyright   Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -13,6 +13,9 @@ defined('_JEXEC') or die;
 if (!empty($this->query->highlight) && $this->params->get('highlight_terms', 1)) {
 	JHtml::_('behavior.highlighter', $this->query->highlight);
 }
+
+// Get the application object.
+$app = JFactory::getApplication();
 
 // Display the suggested search if it is different from the current search.
 if (($this->suggested && $this->params->get('show_suggested_query', 1)) || ($this->explained && $this->params->get('show_explained_query', 1))):

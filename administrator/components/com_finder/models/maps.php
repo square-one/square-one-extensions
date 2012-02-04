@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_finder
  *
- * @copyright   Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -169,7 +169,7 @@ class FinderModelMaps extends JModelList
 		$query->select('COUNT(c.node_id) AS num_nodes');
 		$query->join('LEFT', $db->quoteName('#__finder_taxonomy_map') . ' AS c ON c.node_id=a.id');
 
-		$query->group('a.id');
+		$query->group('a.id, a.parent_id, a.title, a.state, a.access, a.ordering');
 
 		// If the model is set to check item state, add to the query.
 		if (is_numeric($this->getState('filter.state')))

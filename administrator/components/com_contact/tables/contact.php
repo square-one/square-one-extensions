@@ -1,9 +1,8 @@
 <?php
 /**
- * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	com_contact
- * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -86,7 +85,7 @@ class ContactTableContact extends JTable
 		}
 		// Verify that the alias is unique
 		$table = JTable::getInstance('Contact', 'ContactTable');
-		if ($table->load(array('alias'=>$this->alias,'catid'=>$this->catid)) && ($table->id != $this->id || $this->id==0)) {
+		if ($table->load(array('alias'=>$this->alias, 'catid'=>$this->catid)) && ($table->id != $this->id || $this->id==0)) {
 			$this->setError(JText::_('COM_CONTACT_ERROR_UNIQUE_ALIAS'));
 			return false;
 		}
@@ -111,15 +110,6 @@ class ContactTableContact extends JTable
 			return false;
 		}
 
-		// check for http, https, ftp on webpage
-		if ((strlen($this->webpage) > 0)
-			&& (stripos($this->webpage, 'http://') === false)
-			&& (stripos($this->webpage, 'https://') === false)
-			&& (stripos($this->webpage, 'ftp://') === false))
-		{
-			$this->webpage = 'http://'.$this->webpage;
-		}
-
 		/** check for valid name */
 		if (trim($this->name) == '') {
 			$this->setError(JText::_('COM_CONTACT_WARNING_PROVIDE_VALID_NAME'));
@@ -139,7 +129,7 @@ class ContactTableContact extends JTable
 			$this->alias = $this->name;
 		}
 		$this->alias = JApplication::stringURLSafe($this->alias);
-		if (trim(str_replace('-','',$this->alias)) == '') {
+		if (trim(str_replace('-', '', $this->alias)) == '') {
 			$this->alias = JFactory::getDate()->format("Y-m-d-H-i-s");
 		}
 		/** check for valid category */

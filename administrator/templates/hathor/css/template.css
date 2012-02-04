@@ -1,10 +1,9 @@
 @charset "UTF-8";
 
 /**
- * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	templates.hathor
- * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  * @since		1.6
  *
@@ -142,6 +141,10 @@ span.unwritable		{ color: #a20000;}
 .pointer	{ cursor: pointer;}
 .nowrap { white-space: nowrap; }
 
+p.nowarning, p.warning {
+	margin: 10px;
+}
+
 /* end new styles */
 
 /**
@@ -188,7 +191,7 @@ span.unwritable		{ color: #a20000;}
 	margin: 5px 20px 20px 20px;
 }
 
-#element-box.cpanel {
+.cpanel-page div#element-box {
 	padding: 15px;
 }
 
@@ -662,14 +665,14 @@ p.tab-description {
 /**
  * Cpanel Settings
  */
-#cpanel div.icon {
+#cpanel div.icon, .cpanel div.icon {
 	text-align: center;
 	margin-right: 5px;
 	float: left;
 	margin-bottom: 5px;
 }
 
-#cpanel div.icon a {
+#cpanel div.icon a, .cpanel div.icon a {
 	display: block;
 	float: left;
 	height: 97px;
@@ -680,12 +683,12 @@ p.tab-description {
 	font-weight: bold;
 }
 
-#cpanel img {
+#cpanel img, .cpanel img {
 	padding: 10px 0;
 	margin: 0 auto;
 }
 
-#cpanel span {
+#cpanel span, .cpanel span {
 	display: block;
 	text-align: center;
 }
@@ -2629,4 +2632,27 @@ span.update-badge {
 
 .unotes p {
 	padding-bottom: 10px;
+}
+
+/* com-install styling */
+div#database-sliders {
+	margin: 10px;
+}
+
+fieldset.uploadform {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* Installer Database */
+#installer-database, #installer-discover, #installer-update, #installer-warnings {
+	margin-top: 10px;
+}
+
+#installer-database p.warning {
+	padding-left: 20px;
+}
+
+#installer-database p.nowarning {
+	padding-left: 20px;
 }

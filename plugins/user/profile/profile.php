@@ -1,7 +1,6 @@
 <?php
 /**
- * @version		$Id$
- * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -43,7 +42,7 @@ class plgUserProfile extends JPlugin
 	function onContentPrepareData($context, $data)
 	{
 		// Check we are manipulating a valid form.
-		if (!in_array($context, array('com_users.profile','com_users.user', 'com_users.registration', 'com_admin.profile'))) {
+		if (!in_array($context, array('com_users.profile', 'com_users.user', 'com_users.registration', 'com_admin.profile'))) {
 			return true;
 		}
 
@@ -186,7 +185,7 @@ class plgUserProfile extends JPlugin
 				// Remove the field if it is disabled in registration and profile
 				if ($this->params->get('register-require_' . $field, 1) == 0 &&
 					$this->params->get('profile-require_' . $field, 1) == 0) {
-					$form->removeField('address1', 'profile');
+					$form->removeField($field, 'profile');
 				}
 			}
 			// Case registration

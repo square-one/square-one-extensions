@@ -1,10 +1,9 @@
 @charset "UTF-8";
 
 /**
- * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	templates.bluestork
- * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  *
  */
@@ -236,11 +235,6 @@ span.unwritable  {
 	margin: 10px;
 	text-align: center;
 	line-height: 160%;
-}
-
-#footer .version {
-	margin: 10px;
-	text-align: center;
 }
 
 p.footer-tip {
@@ -768,15 +762,14 @@ li.acl-resetbtn:hover {
 
 
 /* -- CONTROL PANEL STYLES ----------------------------- */
-#cpanel div.icon {
+.cpanel div.icon, #cpanel div.icon {
 	text-align: center;
 	margin-right: 15px;
 	float: left;
 	margin-bottom: 15px;
 
 }
-
-#cpanel div.icon a {
+.cpanel div.icon a, #cpanel div.icon a {
 	background-color: #fff;
 	background-position: -30px;
 	display: block;
@@ -805,7 +798,10 @@ li.acl-resetbtn:hover {
 
 #cpanel div.icon a:hover,
 #cpanel div.icon a:focus,
-#cpanel div.icon a:active {
+#cpanel div.icon a:active,
+.cpanel div.icon a:hover,
+.cpanel div.icon a:focus,
+.cpanel div.icon a:active {
 	background-position: 0;
 	-webkit-border-bottom-left-radius: 50% 20px;
 	-moz-border-radius-bottomleft: 50% 20px;
@@ -817,12 +813,14 @@ li.acl-resetbtn:hover {
 	z-index: 10;
 }
 
-#cpanel img {
+#cpanel img,
+.cpanel img {
 	padding: 10px 0;
 	margin: 0 auto;
 }
 
-#cpanel span {
+#cpanel span,
+.cpanel span {
 	display: block;
 	text-align: center;
 }
@@ -3234,4 +3232,15 @@ span.update-badge {
     padding: 0 0.1em 0;
     position: relative;
     top: -74px;
+}
+
+/* Installer Database */
+#installer-database p.warning {
+	padding-left: 20px;
+	background: transparent url(../images/admin/icon-16-deny.png) center left no-repeat;
+}
+
+#installer-database p.nowarning {
+	padding-left: 20px;
+	background: transparent url(../images/admin/icon-16-allow.png) center left no-repeat;
 }

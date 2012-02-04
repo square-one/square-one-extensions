@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- $Id -->
 <metafile version="2.5"  client="site">
 	<name>XXTestLang</name>
 	<version>2.5.0</version>
@@ -7,7 +6,7 @@
 	<author>Joomla! Project</author>
 	<authorEmail>admin@joomla.org</authorEmail>
 	<authorUrl>www.joomla.org</authorUrl>
-	<copyright>Copyright (C) 2005 - 2011 Open Source Matters. All rights reserved.</copyright>
+	<copyright>Copyright (C) 2005 - 2012 Open Source Matters. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<description>xx-XX Test language</description>
 	<files>

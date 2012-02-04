@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_finder
  *
- * @copyright   Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -64,7 +64,7 @@ class FinderModelStatistics extends JModel
 		$query->select('t.title AS type_title, COUNT(a.link_id) AS link_count');
 		$query->from($db->quoteName('#__finder_links') . ' AS a');
 		$query->join('INNER', $db->quoteName('#__finder_types') . ' AS t ON t.id = a.type_id');
-		$query->group('a.' . $db->quoteName('type_id'));
+		$query->group('a.type_id, t.title');
 		$query->order($db->quoteName('type_title'), 'ASC');
 		$db->setQuery($query);
 		$data->type_list = $db->loadObjectList();

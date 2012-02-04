@@ -1,9 +1,8 @@
 <?php
 /**
- * @version		$Id$
  * @package		Joomla.Administrator
  * @subpackage	Templates.hathor
- * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  * @since		1.6
  */
@@ -25,16 +24,23 @@ JHtml::_('behavior.keepalive');
 	$params = $params->toArray();
 
 // This checks if the config options have ever been saved. If they haven't they will fall back to the original settings.
-$editoroptions = $params['show_publishing_options'];
+$editoroptions = isset($params['show_publishing_options']);
+
+if (!$editoroptions):
+	$params['show_publishing_options'] = '1';
+	$params['show_article_options'] = '1';
+	$params['show_urls_images_backend'] = '0';
+	$params['show_urls_images_frontend'] = '0';
+endif;
 
 // Check if the article uses configuration settings besides global. If so, use them.
-if ($this->item->attribs['show_publishing_options'] != null):
+if (!empty($this->item->attribs['show_publishing_options'])):
 		$params['show_publishing_options'] = $this->item->attribs['show_publishing_options'];
 endif;
-if ($this->item->attribs['show_article_options'] != null):
+if (!empty($this->item->attribs['show_article_options'])):
 		$params['show_article_options'] = $this->item->attribs['show_article_options'];
 endif;
-if ($this->item->attribs['show_urls_images_backend'] != null):
+if (!empty($this->item->attribs['show_urls_images_backend'])):
 		$params['show_urls_images_backend'] = $this->item->attribs['show_urls_images_backend'];
 endif;
 
@@ -101,10 +107,10 @@ endif;
 	</div>
 
 	<div class="col options-section">
-		<?php echo JHtml::_('sliders.start','content-sliders-'.$this->item->id, array('useCookie'=>1)); ?>
+		<?php echo JHtml::_('sliders.start', 'content-sliders-'.$this->item->id, array('useCookie'=>1)); ?>
 		<?php // Do not show the publishing options if the edit form is configured not to. ?>
 		<?php  if ($params['show_publishing_options'] || ( $params['show_publishing_options'] = '' && !empty($editoroptions)) ): ?>
-			<?php echo JHtml::_('sliders.panel',JText::_('COM_CONTENT_FIELDSET_PUBLISHING'), 'publishing-details'); ?>
+			<?php echo JHtml::_('sliders.panel', JText::_('COM_CONTENT_FIELDSET_PUBLISHING'), 'publishing-details'); ?>
 			<fieldset class="panelform">
 				<ul class="adminformlist">
 					<li><?php echo $this->form->getLabel('created_by'); ?>
@@ -152,7 +158,7 @@ endif;
 						  // handled separately below. ?>
 
 					<?php if ($name != 'editorConfig' && $name != 'basic-limited') : ?>
-						<?php echo JHtml::_('sliders.panel',JText::_($fieldSet->label), $name.'-options'); ?>
+						<?php echo JHtml::_('sliders.panel', JText::_($fieldSet->label), $name.'-options'); ?>
 						<?php if (isset($fieldSet->description) && trim($fieldSet->description)) : ?>
 							<p class="tip"><?php echo $this->escape(JText::_($fieldSet->description));?></p>
 						<?php endif; ?>
@@ -176,7 +182,7 @@ endif;
 				<?php // We need to make a separate space for the configuration
 				      // so that those fields always show to those wih permissions ?>
 				<?php if ( $this->canDo->get('core.admin')   ):  ?>
-					<?php  echo JHtml::_('sliders.panel',JText::_('COM_CONTENT_SLIDER_EDITOR_CONFIG'), 'configure-sliders'); ?>
+					<?php  echo JHtml::_('sliders.panel', JText::_('COM_CONTENT_SLIDER_EDITOR_CONFIG'), 'configure-sliders'); ?>
 						<fieldset  class="panelform" >
 							<ul class="adminformlist">
 							<?php foreach ($this->form->getFieldset('editorConfig') as $field) : ?>
@@ -190,7 +196,7 @@ endif;
 		<?php // The url and images fields only show if the configuration is set to allow them.  ?>
 		<?php // This is for legacy reasons. ?>
 		<?php if ($params['show_urls_images_backend']): ?>
-			<?php echo JHtml::_('sliders.panel',JText::_('COM_CONTENT_FIELDSET_URLS_AND_IMAGES'), 'urls_and_images-options'); ?>
+			<?php echo JHtml::_('sliders.panel', JText::_('COM_CONTENT_FIELDSET_URLS_AND_IMAGES'), 'urls_and_images-options'); ?>
 				<fieldset class="panelform">
 				<ul class="adminformlist">
 					<li>
@@ -216,7 +222,7 @@ endif;
 				</ul>
 				</fieldset>
 		<?php endif; ?>
-		<?php echo JHtml::_('sliders.panel',JText::_('JGLOBAL_FIELDSET_METADATA_OPTIONS'), 'meta-options'); ?>
+		<?php echo JHtml::_('sliders.panel', JText::_('JGLOBAL_FIELDSET_METADATA_OPTIONS'), 'meta-options'); ?>
 			<fieldset class="panelform">
 			<legend class="element-invisible"><?php echo JText::_('JGLOBAL_FIELDSET_METADATA_OPTIONS'); ?></legend>
 				<?php echo $this->loadTemplate('metadata'); ?>
@@ -227,9 +233,9 @@ endif;
 	<div class="clr"></div>
 	<?php if ($this->canDo->get('core.admin')): ?>
 		<div  class="col rules-section">
-			<?php echo JHtml::_('sliders.start','permissions-sliders-'.$this->item->id, array('useCookie'=>1)); ?>
+			<?php echo JHtml::_('sliders.start', 'permissions-sliders-'.$this->item->id, array('useCookie'=>1)); ?>
 
-				<?php echo JHtml::_('sliders.panel',JText::_('COM_CONTENT_FIELDSET_RULES'), 'access-rules'); ?>
+				<?php echo JHtml::_('sliders.panel', JText::_('COM_CONTENT_FIELDSET_RULES'), 'access-rules'); ?>
 				<fieldset class="panelform">
 					<legend class="element-invisible"><?php echo JText::_('COM_CONTENT_FIELDSET_RULES'); ?></legend>
 					<?php echo $this->form->getLabel('rules'); ?>
