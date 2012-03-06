@@ -1,14 +1,14 @@
 <updates>
 	<update>
-		<name>Deutsch de-DE</name>
-		<description>Deutsch Sprache Verpackung</description>
-		<element>de-DE</element>
+		<name>Bengali Bangladesh bn-BD</name>
+		<description>Bengali Bangladesh</description>
+		<element>bn-BD</element>
 		<type>language</type>
 		<version>2.5.0</version>
 		<client_id>1</client_id>
-		<infourl title="Square One">http://www.squareonecms.org/</infourl>
+		<infourl></infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">http://joomlacode.org/gf/download/frsrelease/16046/70166/de-DE_joomla_lang_full_1.7.3v2.zip</downloadurl>
+			<downloadurl type="full" format="zip">http://joomlacode.org/gf/download/frsrelease/16470/71813/Bengali_bn-BD_2.5_site_v1.zip</downloadurl>
 		</downloads>
         <tags>
             <tag>stable</tag>

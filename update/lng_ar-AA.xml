@@ -1,0 +1,21 @@
+<updates>
+	<update>
+		<name>Arabic ar-AA</name>
+		<description>Arabic Unitag Language Package - حزمة اللغة العربية الموحدة</description>
+		<element>ar-AA</element>
+		<type>language</type>
+		<version>2.5.1</version>
+		<client_id>1</client_id>
+		<infourl>http://forum.joomla.org/viewforum.php?f=17</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">http://joomlacode.org/gf/download/frsrelease/16626/72413/ar-AA_joomla_lang_full_2.5.1v3.zip</downloadurl>
+		</downloads>
+        <tags>
+            <tag>stable</tag>
+        </tags>
+        <category></category>
+		<maintainer>Jeremy Wilken</maintainer>
+		<maintainerurl>http://www.gnomeontherun.com</maintainerurl>
+		<targetplatform name="squareone" version="2.5" />
+	</update>
+</updates>
