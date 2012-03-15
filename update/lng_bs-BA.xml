@@ -1,14 +1,14 @@
 <updates>
 	<update>
-		<name>Azeri az-AZ</name>
-		<description>Azeri</description>
-		<element>az-AZ</element>
+		<name>Bosnian bs-BA</name>
+		<description>Bosnia Language Pack</description>
+		<element>bs-BA</element>
 		<type>language</type>
 		<version>2.5.1</version>
 		<client_id>1</client_id>
-		<infourl>http://joomla-az.org</infourl>
+		<infourl></infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">http://joomlacode.org/gf/download/frsrelease/16613/72328/az-AZ_joomla_lang_full_251.zip</downloadurl>
+			<downloadurl type="full" format="zip">http://joomlacode.org/gf/download/frsrelease/16728/72750/bs-BA_joomla_lang_full_2.5.1v1.zip</downloadurl>
 		</downloads>
         <tags>
             <tag>stable</tag>
