@@ -1,0 +1,21 @@
+<updates>
+	<update>
+		<name>Japanese ja-JP</name>
+		<description>Japanese Language Pack</description>
+		<element>ja-JP</element>
+		<type>language</type>
+		<version>2.5.3</version>
+		<client_id>1</client_id>
+		<infourl></infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">http://joomlacode.org/gf/download/frsrelease/16818/73161/ja-JP_joomla_lang_full_253v1.zip</downloadurl>
+		</downloads>
+        <tags>
+            <tag>stable</tag>
+        </tags>
+        <category></category>
+		<maintainer>Jeremy Wilken</maintainer>
+		<maintainerurl>http://www.gnomeontherun.com</maintainerurl>
+		<targetplatform name="joomla" version="2.5" />
+	</update>
+</updates>

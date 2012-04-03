@@ -1,0 +1,21 @@
+<updates>
+	<update>
+		<name>Serbian Cyrillic sr-RS</name>
+		<description>Serbian Cyrillic Language Pack</description>
+		<element>sr-RS</element>
+		<type>language</type>
+		<version>2.5.0</version>
+		<client_id>1</client_id>
+		<infourl></infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">http://joomlacode.org/gf/download/frsrelease/16464/72145/sr-RS_joomla_lang_full_2-5.zip</downloadurl>
+		</downloads>
+        <tags>
+            <tag>stable</tag>
+        </tags>
+        <category></category>
+		<maintainer>Jeremy Wilken</maintainer>
+		<maintainerurl>http://www.gnomeontherun.com</maintainerurl>
+		<targetplatform name="joomla" version="2.5" />
+	</update>
+</updates>

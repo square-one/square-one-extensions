@@ -1,0 +1,21 @@
+<updates>
+	<update>
+		<name>Malayalam ml-IN</name>
+		<description>Malayalam Language Pack</description>
+		<element>ml-IN</element>
+		<type>language</type>
+		<version>2.5.0</version>
+		<client_id>1</client_id>
+		<infourl></infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">http://joomlacode.org/gf/download/frsrelease/16420/71723/ml-IN_Joomla_lang_site_2.5.0v1.zip</downloadurl>
+		</downloads>
+        <tags>
+            <tag>stable</tag>
+        </tags>
+        <category></category>
+		<maintainer>Jeremy Wilken</maintainer>
+		<maintainerurl>http://www.gnomeontherun.com</maintainerurl>
+		<targetplatform name="joomla" version="2.5" />
+	</update>
+</updates>
