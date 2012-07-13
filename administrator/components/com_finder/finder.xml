@@ -22,7 +22,6 @@
 	</files>
 	<media destination="com_finder" folder="media/com_finder">
 		<folder>js</folder>
-		<folder>images</folder>
 		<folder>css</folder>
 		<filename>index.html</filename>
 	</media>

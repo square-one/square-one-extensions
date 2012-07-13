@@ -20,7 +20,7 @@
         
 		<copy file="administrator/language/en-GB/en-GB.${package}.ini" tofile=".tmp/admin/language/en-GB/en-GB.${package}.ini" />
 		<copy file="administrator/language/en-GB/en-GB.${package}.sys.ini" tofile=".tmp/admin/language/en-GB/en-GB.${package}.sys.ini" />
-		<copy file="language/en-GB/en-GB.${package}.ini" tofile=".tmp/site/en-GB/en-GB.${package}.ini" />
+		<copy file="language/en-GB/en-GB.${package}.ini" tofile=".tmp/site/language/en-GB/en-GB.${package}.ini" />
 		<copy todir=".tmp/admin">
 			<fileset dir="administrator/components/${package}" />
 		</copy>
